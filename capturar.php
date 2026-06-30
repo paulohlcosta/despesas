@@ -1,17 +1,4 @@
-<?php
-// Página de captura — abre câmera traseira, preview, tipo e categoria
-require_once 'config.php';
-
-// Lê categorias do arquivo de texto
-$categorias = [];
-if (is_readable(CATEGORIAS_ARQUIVO)) {
-    $linhas = file(CATEGORIAS_ARQUIVO, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($linhas as $linha) {
-        $cat = trim($linha);
-        if ($cat !== '') $categorias[] = $cat;
-    }
-}
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,81 +7,31 @@ if (is_readable(CATEGORIAS_ARQUIVO)) {
     <title>Registrar Despesa</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            padding: 16px;
-            min-height: 100vh;
-        }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; color: #333; padding: 16px; min-height: 100vh; }
         h1 { font-size: 1.3rem; text-align: center; margin-bottom: 20px; color: #1a1a2e; }
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            max-width: 480px;
-            margin: 0 auto;
-            box-shadow: 0 2px 8px rgba(0,0,0,.1);
-        }
-        label {
-            display: block;
-            font-size: .85rem;
-            font-weight: bold;
-            margin-bottom: 6px;
-            color: #555;
-        }
-        select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; margin-bottom: 16px; background: #fafafa; }
-        .btn-camera {
-            display: block; width: 100%; padding: 14px;
-            background: #1a73e8; color: #fff; border: none;
-            border-radius: 8px; font-size: 1rem; cursor: pointer;
-            text-align: center; margin-bottom: 16px;
-        }
+        .card { background: #fff; border-radius: 12px; padding: 20px; max-width: 480px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 6px; color: #555; }
+        select, input[type="file"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; margin-bottom: 16px; background: #fafafa; }
+        .btn-camera { display: block; width: 100%; padding: 14px; background: #1a73e8; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: center; margin-bottom: 16px; }
         .btn-camera:active { background: #1558b0; }
-        #input-foto { display: none; }
         #preview-container { display: none; margin-bottom: 16px; text-align: center; }
         #preview-img { max-width: 100%; max-height: 300px; border-radius: 8px; border: 2px solid #1a73e8; }
-        #nome-arquivo { font-size: .8rem; color: #777; margin-top: 6px; }
-        .btn-trocar {
-            display: inline-block; margin-top: 8px; padding: 6px 14px;
-            background: #f1f1f1; border: 1px solid #ccc; border-radius: 6px;
-            font-size: .85rem; cursor: pointer; color: #333;
-        }
-        #btn-enviar {
-            display: none; width: 100%; padding: 14px;
-            background: #28a745; color: #fff; border: none;
-            border-radius: 8px; font-size: 1.05rem; font-weight: bold; cursor: pointer;
-        }
+        #nome-arquivo { font-size: 0.8rem; color: #777; margin-top: 6px; }
+        .btn-trocar { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #f1f1f1; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem; cursor: pointer; color: #333; }
+        #btn-enviar { display: none; width: 100%; padding: 14px; background: #28a745; color: #fff; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: bold; cursor: pointer; }
         #btn-enviar:active { background: #1e7e34; }
-        .aviso { font-size: .78rem; color: #999; text-align: center; margin-top: 14px; }
-
-        /* Overlay de envio */
-        #overlay {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,.6); z-index: 999;
-            align-items: center; justify-content: center; flex-direction: column;
-            color: #fff; font-size: 1.1rem; gap: 16px;
-        }
+        #input-foto { display: none; }
+        .aviso { font-size: 0.78rem; color: #999; text-align: center; margin-top: 14px; }
+        #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 999; align-items: center; justify-content: center; flex-direction: column; color: #fff; font-size: 1.1rem; gap: 16px; }
         #overlay.ativo { display: flex; }
-        .spinner {
-            width: 48px; height: 48px;
-            border: 5px solid rgba(255,255,255,.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin .8s linear infinite;
-        }
+        .spinner { width: 48px; height: 48px; border: 5px solid #ffffff44; border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
-
-<div id="overlay"><div class="spinner"></div><span>Enviando foto...</span></div>
-
 <h1>📄 Registrar Despesa</h1>
-
 <div class="card">
     <form id="form-captura" action="processar.php" method="POST" enctype="multipart/form-data">
-
         <label for="tipo_documento">Tipo de documento</label>
         <select name="tipo_documento" id="tipo_documento" required>
             <option value="cupom_fiscal">Cupom Fiscal</option>
@@ -102,34 +39,21 @@ if (is_readable(CATEGORIAS_ARQUIVO)) {
             <option value="recibo_cartao">Recibo de Cartão</option>
             <option value="outro">Outro</option>
         </select>
-
-        <?php if (!empty($categorias)): ?>
-        <label for="categoria">Categoria (opcional)</label>
-        <select name="categoria" id="categoria">
-            <option value="">— selecionar depois —</option>
-            <?php foreach ($categorias as $cat): ?>
-                <option value="<?= htmlspecialchars($cat) ?>"><?= htmlspecialchars($cat) ?></option>
-            <?php endforeach; ?>
-        </select>
-        <?php endif; ?>
-
         <button type="button" class="btn-camera" id="btn-camera">📷 Fotografar documento</button>
-
-        <!-- capture="environment" força câmera traseira no celular -->
-        <input type="file" id="input-foto" name="arquivo_imagem"
-               accept="image/jpeg,image/png,image/webp"
-               capture="environment" required>
-
+        <input type="file" id="input-foto" name="arquivo_imagem" accept="image/jpeg,image/png,image/webp" capture="environment" required>
         <div id="preview-container">
             <img id="preview-img" src="" alt="Preview do documento">
             <div id="nome-arquivo"></div>
             <button type="button" class="btn-trocar" id="btn-trocar">🔄 Trocar foto</button>
         </div>
-
         <button type="submit" id="btn-enviar">✅ Enviar</button>
     </form>
+    <p class="aviso">Formatos aceitos: JPG, PNG, WEBP · Máximo: 10MB</p>
+</div>
 
-    <p class="aviso">Formatos aceitos: JPG, PNG, WEBP · Máximo: 10 MB</p>
+<div id="overlay">
+    <div class="spinner"></div>
+    <span>Salvando imagem...</span>
 </div>
 
 <script>
@@ -141,6 +65,7 @@ if (is_readable(CATEGORIAS_ARQUIVO)) {
     const btnTrocar        = document.getElementById('btn-trocar');
     const btnEnviar        = document.getElementById('btn-enviar');
     const overlay          = document.getElementById('overlay');
+    const form             = document.getElementById('form-captura');
 
     btnCamera.addEventListener('click', () => inputFoto.click());
     btnTrocar.addEventListener('click', () => inputFoto.click());
@@ -149,18 +74,17 @@ if (is_readable(CATEGORIAS_ARQUIVO)) {
         const arquivo = this.files[0];
         if (!arquivo) return;
         const leitor = new FileReader();
-        leitor.onload = e => {
-            previewImg.src         = e.target.result;
+        leitor.onload = function (e) {
+            previewImg.src = e.target.result;
             nomeArquivo.textContent = arquivo.name + ' (' + (arquivo.size / 1024).toFixed(1) + ' KB)';
             previewContainer.style.display = 'block';
-            btnCamera.style.display        = 'none';
-            btnEnviar.style.display        = 'block';
+            btnCamera.style.display = 'none';
+            btnEnviar.style.display = 'block';
         };
         leitor.readAsDataURL(arquivo);
     });
 
-    // Exibe overlay ao submeter
-    document.getElementById('form-captura').addEventListener('submit', () => {
+    form.addEventListener('submit', () => {
         overlay.classList.add('ativo');
     });
 </script>

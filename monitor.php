@@ -1,96 +1,92 @@
 <?php
-// Página de monitoramento da fila de processamento.
-// Permite iniciar processamento manual e gerenciar o cron job real.
-
 require_once 'config.php';
 
-// ─── Ação: processar agora (executa o worker via CLI) ─────────────────────
-$msg_acao = '';
-if (isset($_POST['acao'])) {
-    switch ($_POST['acao']) {
+$mensagem_cron = '';
+$tipo_mensagem = '';
 
-        case 'processar_agora':
-            // Executa o worker em background — retorna imediatamente
-            $cmd = '/usr/bin/php ' . escapeshellarg(__DIR__ . '/processar_worker.php')
-                 . ' >> ' . escapeshellarg(__DIR__ . '/logs/worker.log') . ' 2>&1 &';
-            exec($cmd);
-            $msg_acao = 'Worker iniciado em background. Aguarde alguns instantes e recarregue a página.';
-            break;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['acao'])) {
 
-        case 'ativar_cron':
-            $linha = CRON_CMD . PHP_EOL;
-            if (file_put_contents(CRON_ARQUIVO, $linha) !== false) {
-                // Permissão correta para /etc/cron.d
-                @chmod(CRON_ARQUIVO, 0644);
-                $msg_acao = 'Cron job criado em ' . CRON_ARQUIVO . '.';
+        if ($_POST['acao'] === 'processar_agora') {
+            $saida = shell_exec('/usr/bin/php ' . __DIR__ . '/processar_gemini.php 2>&1');
+            $mensagem_cron = 'Processamento executado manualmente.';
+            $tipo_mensagem = 'ok';
+        }
+
+        if ($_POST['acao'] === 'salvar_cron') {
+            $php_bin   = trim(shell_exec('which php'));
+            $script    = __DIR__ . '/processar_gemini.php';
+            $log       = __DIR__ . '/logs/cron.log';
+            $intervalo = INTERVALO_CRON_MINUTOS;
+            $linha_cron = "*/$intervalo * * * * $php_bin $script >> $log 2>&1";
+
+            $crontab_atual = shell_exec('crontab -l 2>/dev/null') ?? '';
+
+            if (str_contains($crontab_atual, 'processar_gemini.php')) {
+                $mensagem_cron = 'Cron já estava configurado. Nenhuma alteração feita.';
+                $tipo_mensagem = 'info';
             } else {
-                $msg_acao = 'ERRO: não foi possível escrever em ' . CRON_ARQUIVO
-                          . '. O Apache precisa de sudo para isso. Ver instruções abaixo.';
+                $novo_crontab = rtrim($crontab_atual) . "\n" . $linha_cron . "\n";
+                $tmp = tempnam(sys_get_temp_dir(), 'cron_');
+                file_put_contents($tmp, $novo_crontab);
+                shell_exec("crontab $tmp");
+                unlink($tmp);
+                $mensagem_cron = "Cron agendado: a cada {$intervalo} minutos.";
+                $tipo_mensagem = 'ok';
             }
-            break;
+        }
 
-        case 'desativar_cron':
-            if (file_exists(CRON_ARQUIVO)) {
-                if (@unlink(CRON_ARQUIVO)) {
-                    $msg_acao = 'Cron job removido.';
-                } else {
-                    $msg_acao = 'ERRO: não foi possível remover ' . CRON_ARQUIVO . '.';
-                }
-            } else {
-                $msg_acao = 'Cron job já estava inativo.';
-            }
-            break;
+        if ($_POST['acao'] === 'remover_cron') {
+            $crontab_atual = shell_exec('crontab -l 2>/dev/null') ?? '';
+            $linhas = explode("\n", $crontab_atual);
+            $filtrado = array_filter($linhas, fn($l) => !str_contains($l, 'processar_gemini.php'));
+            $novo_crontab = implode("\n", $filtrado);
+            $tmp = tempnam(sys_get_temp_dir(), 'cron_');
+            file_put_contents($tmp, $novo_crontab);
+            shell_exec("crontab $tmp");
+            unlink($tmp);
+            $mensagem_cron = 'Cron removido.';
+            $tipo_mensagem = 'aviso';
+        }
     }
 }
 
-// ─── Dados para exibição ──────────────────────────────────────────────────
 try {
-    $dsn = 'mysql:host='.DB_HOST.';dbname='.DB_BANCO.';charset=utf8mb4';
-    $pdo = new PDO($dsn, DB_USUARIO, DB_SENHA, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+    $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_BANCO . ';charset=utf8mb4';
+    $pdo = new PDO($dsn, DB_USUARIO, DB_SENHA, [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
 
-    // Pendentes = observacoes = 'pendente de processamento'
     $pendentes = $pdo->query(
         "SELECT id, tipo_documento, arquivo_imagem, created_at
          FROM t_despesas
-         WHERE observacoes = 'pendente de processamento'
+         WHERE revisado = 0
          ORDER BY created_at ASC"
     )->fetchAll();
 
-    // Últimas 10 processadas
-    $processadas = $pdo->query(
-        "SELECT id, nome_estabelecimento, valor_liquido, categoria,
-                confianca_extracao, arquivo_imagem, created_at
-         FROM t_despesas
-         WHERE observacoes != 'pendente de processamento'
-           AND observacoes != 'arquivo não encontrado'
-         ORDER BY created_at DESC LIMIT 10"
-    )->fetchAll();
+    $total_pendentes    = count($pendentes);
+    $total_processados  = $pdo->query("SELECT COUNT(*) FROM t_despesas WHERE revisado = 1")->fetchColumn();
+    $total_geral        = $pdo->query("SELECT COUNT(*) FROM t_despesas")->fetchColumn();
 
 } catch (PDOException $e) {
-    $pendentes = $processadas = [];
-    $msg_acao  = 'Erro de banco: ' . $e->getMessage();
+    die('Erro BD: ' . $e->getMessage());
 }
 
-// ─── Status do cron ───────────────────────────────────────────────────────
-$cron_ativo      = file_exists(CRON_ARQUIVO);
-$intervalo       = CRON_INTERVALO_MIN;
+$crontab_atual  = shell_exec('crontab -l 2>/dev/null') ?? '';
+$cron_ativo     = str_contains($crontab_atual, 'processar_gemini.php');
 
-// Calcula próxima execução (múltiplo de 15 min)
-$agora           = time();
-$min_atual       = (int)date('i', $agora);
-$min_prox        = (int)(ceil(($min_atual + 1) / $intervalo) * $intervalo);
-if ($min_prox >= 60) {
-    $prox_exec = mktime(date('H', $agora) + 1, $min_prox - 60, 0);
-} else {
-    $prox_exec = mktime(date('H', $agora), $min_prox, 0);
+$proximo_exec = null;
+if ($cron_ativo) {
+    $agora        = time();
+    $intervalo_s  = INTERVALO_CRON_MINUTOS * 60;
+    $proximo_exec = date('H:i', $agora + ($intervalo_s - ($agora % $intervalo_s)));
 }
-$prox_exec_str   = date('H:i', $prox_exec);
-$faltam_min      = (int)round(($prox_exec - $agora) / 60);
 
-$rotulos_tipo = [
-    'cupom_fiscal'  => 'Cupom',
+$rotulos = [
+    'cupom_fiscal'  => 'Cupom Fiscal',
     'danfe'         => 'DANFE',
-    'recibo_cartao' => 'Cartão',
+    'recibo_cartao' => 'Recibo de Cartão',
     'outro'         => 'Outro',
 ];
 ?>
@@ -99,86 +95,131 @@ $rotulos_tipo = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor — Despesas</title>
+    <title>Monitor de Processamento</title>
     <style>
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:Arial,sans-serif;background:#f0f2f5;color:#333;padding:16px}
-        h1{font-size:1.3rem;margin-bottom:20px;color:#1a1a2e;text-align:center}
-        h2{font-size:1rem;margin-bottom:10px;color:#444}
-        .card{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;
-              max-width:700px;margin-left:auto;margin-right:auto;
-              box-shadow:0 2px 8px rgba(0,0,0,.1)}
-
-        /* Status cron */
-        .cron-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-        .badge{padding:4px 12px;border-radius:20px;font-size:.85rem;font-weight:bold}
-        .badge.ativo{background:#d4edda;color:#155724}
-        .badge.inativo{background:#f8d7da;color:#721c24}
-
-        /* Próxima execução */
-        .prox{background:#e8f0fe;border-radius:8px;padding:10px 14px;
-              font-size:.9rem;color:#1a1a2e;margin-bottom:12px}
-
-        /* Botões */
-        .btns{display:flex;gap:8px;flex-wrap:wrap}
-        button,a.btn{padding:9px 16px;border:none;border-radius:8px;
-                     font-size:.9rem;cursor:pointer;text-decoration:none;display:inline-block}
-        .verde{background:#28a745;color:#fff}
-        .vermelho{background:#dc3545;color:#fff}
-        .azul{background:#1a73e8;color:#fff}
-        .cinza{background:#f1f1f1;color:#333;border:1px solid #ccc}
-        button:active,a.btn:active{opacity:.8}
-
-        /* Mensagem de ação */
-        .msg{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;
-             padding:10px 14px;margin-bottom:12px;font-size:.9rem;color:#856404}
-
-        /* Tabelas */
-        table{width:100%;border-collapse:collapse;font-size:.85rem}
-        th{background:#f8f9fa;padding:8px 6px;text-align:left;border-bottom:2px solid #ddd;color:#555}
-        td{padding:8px 6px;border-bottom:1px solid #f0f0f0;vertical-align:top}
-        tr:hover td{background:#fafafa}
-        .vazio{color:#999;font-style:italic;padding:12px 6px}
-
-        /* Confiança */
-        .conf{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.8rem}
-        .conf.alta{background:#d4edda;color:#155724}
-        .conf.media{background:#fff3cd;color:#856404}
-        .conf.baixa{background:#f8d7da;color:#721c24}
-        .conf.zero{background:#e9ecef;color:#6c757d}
-
-        /* Instruções sudo */
-        .instrucoes{background:#f8f9fa;border:1px solid #ddd;border-radius:8px;
-                    padding:12px;font-size:.82rem;color:#555;margin-top:10px}
-        .instrucoes code{background:#e9ecef;padding:2px 6px;border-radius:4px;font-family:monospace}
-
-        /* Contador pendentes */
-        .contador{font-size:1.8rem;font-weight:bold;text-align:center;
-                  color:#1a73e8;margin:6px 0}
-        .contador-label{font-size:.8rem;color:#999;text-align:center;margin-bottom:12px}
-
-        @media(max-width:480px){
-            th:nth-child(4),td:nth-child(4){display:none} /* oculta coluna arquivo em telas pequenas */
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; padding: 16px; color: #333; }
+        h1 { font-size: 1.3rem; text-align: center; margin-bottom: 20px; color: #1a1a2e; }
+        .card { background: #fff; border-radius: 12px; padding: 20px; max-width: 720px; margin: 0 auto 16px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        h2 { font-size: 1rem; margin-bottom: 12px; color: #444; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+        .stat { flex: 1; min-width: 100px; background: #f8f9fa; border-radius: 8px; padding: 12px; text-align: center; }
+        .stat .num { font-size: 1.8rem; font-weight: bold; color: #1a73e8; }
+        .stat .leg { font-size: 0.75rem; color: #777; margin-top: 4px; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: .78rem; font-weight: bold; }
+        .badge-pend { background: #fff3cd; color: #856404; }
+        .badge-ok   { background: #d4edda; color: #155724; }
+        table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+        th { background: #f8f9fa; padding: 8px 6px; text-align: left; color: #555; font-size: .8rem; }
+        td { padding: 8px 6px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+        .thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+        .btn { display: inline-block; padding: 10px 18px; border: none; border-radius: 8px; font-size: .9rem; cursor: pointer; text-decoration: none; }
+        .btn-azul   { background: #1a73e8; color: #fff; }
+        .btn-verde  { background: #28a745; color: #fff; }
+        .btn-verm   { background: #dc3545; color: #fff; }
+        .btn-cinza  { background: #f1f1f1; color: #333; border: 1px solid #ccc; }
+        .acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+        .msg { padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: .9rem; }
+        .msg-ok    { background: #d4edda; color: #155724; }
+        .msg-aviso { background: #fff3cd; color: #856404; }
+        .msg-info  { background: #d1ecf1; color: #0c5460; }
+        .cron-status { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+        .dot-verde { background: #28a745; }
+        .dot-verm  { background: #dc3545; }
+        .proximo { font-size: .85rem; color: #555; }
+        .vazio { text-align: center; color: #aaa; padding: 24px; font-size: .95rem; }
+        @media(max-width:480px) { .stats { flex-direction: column; } }
     </style>
 </head>
 <body>
-
 <h1>📊 Monitor de Processamento</h1>
 
-<!-- ── CARD: Agendamento ─────────────────────────────────────────────── -->
 <div class="card">
-    <h2>⏰ Agendamento (cron)</h2>
+    <h2>Resumo</h2>
+    <div class="stats">
+        <div class="stat"><div class="num"><?= $total_pendentes ?></div><div class="leg">Pendentes</div></div>
+        <div class="stat"><div class="num"><?= $total_processados ?></div><div class="leg">Processados</div></div>
+        <div class="stat"><div class="num"><?= $total_geral ?></div><div class="leg">Total</div></div>
+    </div>
+</div>
 
-    <?php if ($msg_acao): ?>
-        <div class="msg"><?= htmlspecialchars($msg_acao) ?></div>
+<div class="card">
+    <h2>Agendamento (Cron)</h2>
+
+    <?php if ($mensagem_cron): ?>
+        <div class="msg msg-<?= $tipo_mensagem ?>"><?= htmlspecialchars($mensagem_cron) ?></div>
     <?php endif; ?>
 
     <div class="cron-status">
-        <span>Status:</span>
-        <span class="badge <?= $cron_ativo ? 'ativo' : 'inativo' ?>">
-            <?= $cron_ativo ? '✅ Ativo' : '⛔ Inativo' ?>
-        </span>
-        <span style="font-size:.85rem;color:#777">
-            (exec
+        <div class="dot <?= $cron_ativo ? 'dot-verde' : 'dot-verm' ?>"></div>
+        <span><?= $cron_ativo ? 'Cron ativo — executa a cada ' . INTERVALO_CRON_MINUTOS . ' minutos' : 'Cron não configurado' ?></span>
+        <?php if ($cron_ativo && $proximo_exec): ?>
+            <span class="proximo">Próxima execução aproximada: <strong><?= $proximo_exec ?></strong></span>
+        <?php endif; ?>
+    </div>
 
+    <div class="acoes">
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="acao" value="processar_agora">
+            <button class="btn btn-azul" type="submit">▶ Processar agora</button>
+        </form>
+        <?php if (!$cron_ativo): ?>
+            <form method="POST" style="display:inline">
+                <input type="hidden" name="acao" value="salvar_cron">
+                <button class="btn btn-verde" type="submit">⏱ Ativar agendamento</button>
+            </form>
+        <?php else: ?>
+            <form method="POST" style="display:inline">
+                <input type="hidden" name="acao" value="remover_cron">
+                <button class="btn btn-verm" type="submit">✖ Remover agendamento</button>
+            </form>
+        <?php endif; ?>
+        <a href="monitor.php" class="btn btn-cinza">↻ Atualizar</a>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Fotos pendentes (<?= $total_pendentes ?>)</h2>
+
+    <?php if (empty($pendentes)): ?>
+        <div class="vazio">Nenhuma foto aguardando processamento.</div>
+    <?php else: ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Arquivo</th>
+                    <th>Recebido em</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($pendentes as $r): ?>
+                <tr>
+                    <td>
+                        <img
+                            class="thumb"
+                            src="uploads/<?= urlencode($r['arquivo_imagem']) ?>"
+                            alt="thumb"
+                            onerror="this.style.display='none'"
+                        >
+                    </td>
+                    <td>#<?= $r['id'] ?></td>
+                    <td><span class="badge badge-pend"><?= htmlspecialchars($rotulos[$r['tipo_documento']] ?? $r['tipo_documento']) ?></span></td>
+                    <td><?= htmlspecialchars($r['arquivo_imagem']) ?></td>
+                    <td><?= date('d/m/Y H:i', strtotime($r['created_at'])) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+</div>
+
+<div style="text-align:center;margin-top:8px;">
+    <a href="capturar.php" class="btn btn-cinza">← Capturar nova despesa</a>
+</div>
+
+</body>
+</html>
