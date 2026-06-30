@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', 'localhost');
-define('DB_USUARIO', 'seu_usuario');
-define('DB_SENHA', 'sua_senha');
+define('DB_USUARIO', 'root');
+define('DB_SENHA', 'SUA_SENHA_AQUI');
 define('DB_BANCO', 'db_despesas');
 define('MAX_TAMANHO_UPLOAD', 10 * 1024 * 1024);
 define('TIPOS_PERMITIDOS', ['image/jpeg', 'image/png', 'image/webp']);
