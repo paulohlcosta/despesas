@@ -8,9 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['acao'])) {
 
         if ($_POST['acao'] === 'processar_agora') {
-            $saida = shell_exec('/usr/bin/php ' . __DIR__ . '/processar_gemini.php 2>&1');
-            $mensagem_cron = 'Processamento executado manualmente.';
-            $tipo_mensagem = 'ok';
+            $script = __DIR__ . '/processar_gemini.php';
+            $log    = __DIR__ . '/logs/cron.log';
+            shell_exec("nohup /usr/bin/php $script >> $log 2>&1 &");
+            $mensagem_cron = 'Processamento iniciado em background. Acompanhe o log.';
+            $tipo_mensagem = 'info';
         }
 
         if ($_POST['acao'] === 'salvar_cron') {
