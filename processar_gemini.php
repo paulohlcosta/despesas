@@ -11,15 +11,18 @@ Analise a imagem e retorne SOMENTE um JSON válido, sem texto adicional, sem mar
 
 Tipo de documento esperado: {$tipo_documento}
 Categorias disponíveis: {$lista_categorias}
+        
+Campos obrigatórios: data_emissao, valor_liquido, nome_estabelecimento.
+Os demais campos são opcionais — retorne null se não encontrar a informação na imagem.
 
-Campos obrigatórios do JSON:
+Campos do JSON:
 {
   "chave_acesso": "string ou null",
   "data_emissao": "YYYY-MM-DD HH:MM:SS ou null",
   "cnpj_emitente": "string só dígitos ou null",
   "nome_estabelecimento": "string",
-  "valor_bruto": número,
-  "desconto": número,
+  "valor_bruto": "número ou null",
+  "desconto": "número ou null",
   "valor_liquido": número,
   "forma_pagamento": "string ou null",
   "categoria": "uma das categorias listadas ou null",
@@ -161,6 +164,10 @@ foreach ($pendentes as $registro) {
     $confianca            = $dados['confianca_extracao']   ?? 0;
     $observacoes          = $dados['observacoes']          ?? null;
 
+    $cnpj_emitente = isset($dados['cnpj_emitente'])
+        ? preg_replace('/\D/', '', $dados['cnpj_emitente'])
+        : null;
+    
     try {
         $upd = $pdo->prepare(
             "UPDATE t_despesas SET
