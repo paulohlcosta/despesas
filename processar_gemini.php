@@ -2,8 +2,91 @@
 require_once __DIR__ . '/config.php';
 
 function extrair_dados_gemini(string $caminho_arquivo, string $tipo_documento, array $categorias): array {
-    // TODO: implementar chamada à API Gemini
-    return [];
+
+    $lista_categorias = implode(', ', $categorias);
+
+    $prompt = <<<PROMPT
+Você é um extrator de dados de documentos fiscais brasileiros.
+Analise a imagem e retorne SOMENTE um JSON válido, sem texto adicional, sem markdown, sem blocos de código.
+
+Tipo de documento esperado: {$tipo_documento}
+Categorias disponíveis: {$lista_categorias}
+
+Campos obrigatórios do JSON:
+{
+  "chave_acesso": "string ou null",
+  "data_emissao": "YYYY-MM-DD HH:MM:SS ou null",
+  "cnpj_emitente": "string só dígitos ou null",
+  "nome_estabelecimento": "string",
+  "valor_bruto": número,
+  "desconto": número,
+  "valor_liquido": número,
+  "forma_pagamento": "string ou null",
+  "categoria": "uma das categorias listadas ou null",
+  "confianca_extracao": número de 0 a 100,
+  "observacoes": "string ou null"
+}
+PROMPT;
+
+    // Codifica a imagem em base64
+    $imagem_b64 = base64_encode(file_get_contents($caminho_arquivo));
+    $mime       = mime_content_type($caminho_arquivo);
+
+    $payload = [
+        'model'       => LLM_MODEL,
+        'temperature' => 0.1,
+        'messages'    => [
+            [
+                'role'    => 'user',
+                'content' => [
+                    [
+                        'type' => 'text',
+                        'text' => $prompt,
+                    ],
+                    [
+                        'type'      => 'image_url',
+                        'image_url' => [
+                            'url' => "data:{$mime};base64,{$imagem_b64}",
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ];
+
+    $ch = curl_init(LLM_HOST . '/v1/chat/completions');
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST           => true,
+        CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        CURLOPT_POSTFIELDS     => json_encode($payload),
+        CURLOPT_TIMEOUT        => LLM_TIMEOUT,
+    ]);
+
+    $resposta_raw = curl_exec($ch);
+    $erro_curl    = curl_error($ch);
+    curl_close($ch);
+
+    if ($erro_curl) {
+        log_msg("cURL erro: $erro_curl");
+        return [];
+    }
+
+    $resposta = json_decode($resposta_raw, true);
+    $conteudo = $resposta['choices'][0]['message']['content'] ?? '';
+
+    // Remove possíveis blocos markdown que o modelo insira mesmo pedindo para não
+    $conteudo = preg_replace('/^```(?:json)?\s*/i', '', trim($conteudo));
+    $conteudo = preg_replace('/\s*```$/', '', $conteudo);
+
+    $dados = json_decode(trim($conteudo), true);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        log_msg("JSON inválido recebido: " . substr($conteudo, 0, 300));
+        return [];
+    }
+
+    return $dados;
 }
 
 function carregar_categorias(): array {
