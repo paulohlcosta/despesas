@@ -1,0 +1,10 @@
+Mercado/comida
+Combustível
+Mensalidades
+Passeios
+Diversos
+Compras
+Casa
+Carros
+Viagens/Eventos
+Médicos
