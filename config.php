@@ -10,4 +10,4 @@ define('ARQUIVO_CATEGORIAS', '/var/www/html/categorias.txt');
 define('INTERVALO_CRON_MINUTOS', 15);
 define('LLM_HOST', 'http://192.168.2.10:1234');
 define('LLM_MODEL', 'gemma-3-4b');
-define('LLM_TIMEOUT', 180); // segundos — processamento lento
+define('LLM_TIMEOUT', 300); // segundos — processamento lento
