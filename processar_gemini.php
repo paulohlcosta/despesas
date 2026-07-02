@@ -103,6 +103,16 @@ function log_msg(string $msg): void {
     file_put_contents(__DIR__ . '/logs/gemini.log', $linha, FILE_APPEND);
 }
 
+$lockfile = __DIR__ . '/gemini.lock';
+if (file_exists($lockfile)) {
+    $idade = time() - filemtime($lockfile);
+    if ($idade < 600) { // 10 minutos
+        log_msg('Outra instância em execução, abortando.');
+        exit(0);
+    }
+}
+file_put_contents($lockfile, getmypid());
+
 $dir_logs = __DIR__ . '/logs';
 if (!is_dir($dir_logs)) mkdir($dir_logs, 0755, true);
 
@@ -213,5 +223,7 @@ foreach ($pendentes as $registro) {
         log_msg("ID $id: ERRO ao atualizar BD: " . $e->getMessage());
     }
 }
+
+unlink($lockfile);
 
 log_msg('Execução concluída.');
