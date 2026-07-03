@@ -103,6 +103,9 @@ function log_msg(string $msg): void {
     file_put_contents(__DIR__ . '/logs/gemini.log', $linha, FILE_APPEND);
 }
 
+set_time_limit(600);
+ini_set('max_execution_time', 600);
+
 $lockfile = __DIR__ . '/gemini.lock';
 if (file_exists($lockfile)) {
     $idade = time() - filemtime($lockfile);
