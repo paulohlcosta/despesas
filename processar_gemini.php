@@ -176,7 +176,10 @@ foreach ($pendentes as $registro) {
     $categoria            = $dados['categoria']            ?? null;
     $confianca            = $dados['confianca_extracao']   ?? 0;
     $observacoes          = $dados['observacoes']          ?? null;
-
+    
+    $valor_bruto   = isset($dados['valor_bruto'])   ? (float) str_replace(',', '.', $dados['valor_bruto'])   : 0.00;
+    $desconto      = isset($dados['desconto'])       ? (float) str_replace(',', '.', $dados['desconto'])      : 0.00;
+    $valor_liquido = isset($dados['valor_liquido'])  ? (float) str_replace(',', '.', $dados['valor_liquido']) : 0.00;
     $cnpj_emitente = isset($dados['cnpj_emitente'])
         ? preg_replace('/\D/', '', $dados['cnpj_emitente'])
         : null;
