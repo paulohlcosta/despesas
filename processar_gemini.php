@@ -37,7 +37,10 @@ PROMPT;
 
     $payload = [
         'model'       => LLM_MODEL,
-        'temperature' => 0.1,
+        'temperature' => 0.7,
+        'top_p' => 0.8,
+        'presence_penalty' => 1.5, // Discourages repeating structural thought tokens
+        'stream' => false
         'messages'    => [
             [
                 'role'    => 'user',
