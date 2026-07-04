@@ -6,29 +6,10 @@ function extrair_dados_gemini(string $caminho_arquivo, string $tipo_documento, a
     $lista_categorias = implode(', ', $categorias);
 
     $prompt = <<<PROMPT
-Você é um extrator de dados de documentos fiscais brasileiros.
-Analise a imagem e retorne SOMENTE um JSON válido, sem texto adicional, sem markdown, sem blocos de código.
+Analyze this Brazilian fiscal document image. Reply with ONLY a raw JSON object, starting with { and ending with }. No explanation, no markdown.
 
-Tipo de documento esperado: {$tipo_documento}
-Categorias disponíveis: {$lista_categorias}
-        
-Campos obrigatórios: data_emissao, valor_liquido, nome_estabelecimento.
-Os demais campos são opcionais — retorne null se não encontrar a informação na imagem.
-
-Campos do JSON:
-{
-  "chave_acesso": "string ou null",
-  "data_emissao": "YYYY-MM-DD HH:MM:SS ou null",
-  "cnpj_emitente": "string só dígitos ou null",
-  "nome_estabelecimento": "string",
-  "valor_bruto": "número ou null",
-  "desconto": "número ou null",
-  "valor_liquido": número,
-  "forma_pagamento": "string ou null",
-  "categoria": "uma das categorias listadas ou null",
-  "confianca_extracao": número de 0 a 100,
-  "observacoes": "string ou null"
-}
+Required JSON format:
+{"chave_acesso":null,"data_emissao":"YYYY-MM-DD HH:MM:SS","cnpj_emitente":null,"nome_estabelecimento":"string","valor_bruto":0.00,"desconto":0.00,"valor_liquido":0.00,"forma_pagamento":null,"categoria":null,"confianca_extracao":0,"observacoes":null}
 PROMPT;
 
     // Codifica a imagem em base64
