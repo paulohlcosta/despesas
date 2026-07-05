@@ -90,7 +90,7 @@ if (isset($_GET['lm_action'])) {
     header('Content-Type: application/json');
 
     function lm_request(string $path, string $method = 'GET', mixed $body = null): array {
-        $url = LM_STUDIO_URL . $path;
+        $url = LLM_HOST . $path;
         $ch  = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
