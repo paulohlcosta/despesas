@@ -12,23 +12,6 @@ Analise a imagem e retorne SOMENTE um JSON válido, sem texto adicional, sem mar
 Tipo de documento esperado: {$tipo_documento}
 Categorias disponíveis: {$lista_categorias}
         
-Campos obrigatórios: data_emissao, valor_liquido, nome_estabelecimento.
-Os demais campos são opcionais — retorne null se não encontrar a informação na imagem.
-
-Campos do JSON:
-{
-  "chave_acesso": "string ou null",
-  "data_emissao": "YYYY-MM-DD HH:MM:SS ou null",
-  "cnpj_emitente": "string só dígitos ou null",
-  "nome_estabelecimento": "string",
-  "valor_bruto": "número ou null",
-  "desconto": "número ou null",
-  "valor_liquido": número,
-  "forma_pagamento": "string ou null",
-  "categoria": "uma das categorias listadas ou null",
-  "confianca_extracao": número de 0 a 100,
-  "observacoes": "string ou null"
-}
 PROMPT;
 
     // Codifica a imagem em base64
@@ -37,10 +20,32 @@ PROMPT;
 
     $payload = [
         'model'       => LLM_MODEL,
-        'temperature' => 0.7,
-        'top_p' => 0.8,
-        'presence_penalty' => 1.5, // Discourages repeating structural thought tokens
-        'stream' => false,
+
+        'temperature'      => 0.7,
+        'top_p'            => 0.8,
+        'presence_penalty' => 1.5,
+        'stream'           => false,
+        'response_format'  => [
+            'type' => 'json_object',
+            'schema' => [
+                'type' => 'object',
+                'properties' => [
+                    'chave_acesso'        => ['type' => ['string', 'null']],
+                    'data_emissao'        => ['type' => 'string', 'description' => 'YYYY-MM-DD HH:MM:SS'],
+                    'cnpj_emitente'       => ['type' => ['string', 'null']],
+                    'nome_estabelecimento'=> ['type' => ['string', 'null']],
+                    'valor_bruto'         => ['type' => ['number', 'null']],
+                    'desconto'            => ['type' => ['number', 'null']],
+                    'valor_liquido'       => ['type' => 'number'],
+                    'forma_pagamento'     => ['type' => ['string', 'null']],
+                    'categoria'           => ['type' => ['string', 'null']],
+                    'confianca_extracao'  => ['type' => 'integer', 'minimum' => 0, 'maximum' => 100],
+                    'observacoes'         => ['type' => ['string', 'null']]
+                ],
+                'required' => ['chave_acesso', 'data_emissao', 'cnpj_emitente', 'nome_estabelecimento', 'valor_bruto', 'desconto', 'valor_liquido', 'forma_pagamento', 'categoria', 'confianca_extracao', 'observacoes']
+            ]
+        ],        
+        
         'messages'    => [
             [
                 'role'    => 'user',
