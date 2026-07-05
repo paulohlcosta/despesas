@@ -40,7 +40,7 @@ PROMPT;
         'temperature' => 0.7,
         'top_p' => 0.8,
         'presence_penalty' => 1.5, // Discourages repeating structural thought tokens
-        'stream' => false
+        'stream' => false,
         'messages'    => [
             [
                 'role'    => 'user',
