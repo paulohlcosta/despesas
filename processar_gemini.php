@@ -41,7 +41,6 @@ PROMPT;
         'response_format'  => [
             'type' => 'json_object',
             'required' => ['data_emissao', 'nome_estabelecimento', 'valor_liquido', 'categoria', 'confianca_extracao']
-            ]
         ],        
         
         'messages'    => [
