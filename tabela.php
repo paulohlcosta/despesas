@@ -29,8 +29,13 @@ $rows = $pdo->query("SELECT * FROM t_despesas ORDER BY id DESC")->fetchAll(PDO::
   </thead>
   <tbody>
     <?php foreach ($rows as $r): ?>
-    <tr><?php foreach ($r as $v): ?>
-      <td><?= htmlspecialchars($v ?? '—') ?></td>
+    <tr><?php foreach ($r as $col => $v): ?>
+      <td><?php if ($col === 'arquivo_imagem' && $v):
+        $arquivo = ltrim($v, '_');
+        echo '<a href="uploads/' . htmlspecialchars($arquivo) . '" target="_blank">' . htmlspecialchars($v) . '</a>';
+      else:
+        echo htmlspecialchars($v ?? '—');
+      endif; ?></td>
     <?php endforeach; ?></tr>
     <?php endforeach; ?>
   </tbody>
