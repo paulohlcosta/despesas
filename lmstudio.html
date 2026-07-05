@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<! exibe os modelos carregados/descarregados e permite chat com os carregados. LOAD/UNLOAD models>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,11 +11,11 @@
     body { font-family: monospace; background: #1a1a1a; color: #ddd; display: flex; flex-direction: column; height: 100vh; padding: 16px; gap: 12px; }
 
     #toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    #toolbar select { flex: 1; padding: 6px; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; }
+    #model-select { flex: 1; padding: 6px; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 13px; }
     #toolbar button { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 13px; }
-    #btn-load   { background: #2a6a2a; color: #9f9; }
-    #btn-unload { background: #6a2a2a; color: #f99; }
-    #btn-refresh{ background: #2a2a5a; color: #99f; }
+    #btn-load    { background: #2a6a2a; color: #9f9; }
+    #btn-unload  { background: #6a2a2a; color: #f99; }
+    #btn-refresh { background: #2a2a5a; color: #99f; }
 
     #status { font-size: 12px; color: #888; min-height: 18px; }
 
@@ -25,7 +28,7 @@
 
     #input-row { display: flex; gap: 8px; }
     #input { flex: 1; padding: 10px; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 14px; resize: none; height: 60px; }
-    #btn-send { padding: 10px 20px; background: #1a4a8a; color: #adf; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 14px; }
+    #btn-send  { padding: 10px 20px; background: #1a4a8a; color: #adf; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 14px; }
     #btn-send:disabled { opacity: 0.4; cursor: default; }
     #btn-clear { padding: 10px 12px; background: #333; color: #888; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; }
   </style>
@@ -33,7 +36,7 @@
 <body>
 
   <div id="toolbar">
-    <select id="model-select"><option value="">-- atualizar lista --</option></select>
+    <select id="model-select"><option value="">-- clique em Listar --</option></select>
     <button id="btn-refresh" onclick="loadModels()">↺ Listar</button>
     <button id="btn-load"    onclick="manageModel('load')">▶ Carregar</button>
     <button id="btn-unload"  onclick="manageModel('unload')">■ Descarregar</button>
@@ -50,17 +53,23 @@
   </div>
 
 <script>
-  // LM Studio full chatbot with model management
-  // Technique: OpenAI-compatible REST API, SSE streaming, model load/unload via api/v0
+  // LM Studio chatbot
+  // Load/unload via /api/v1/models/load|unload
+  //   load:   POST { model: "key" }
+  //   unload: POST { instance_id: "loaded_instances[0].id" }
+  // Model list via /api/v1/models — loaded = loaded_instances.length > 0
 
   const API = "http://semtela:1234"; // <<< ajuste para o IP do servidor
 
-  const history = [];
-  const chatEl  = document.getElementById("chat");
-  const inputEl = document.getElementById("input");
-  const sendBtn = document.getElementById("btn-send");
-  const selEl   = document.getElementById("model-select");
-  const statusEl= document.getElementById("status");
+  const history  = [];
+  const chatEl   = document.getElementById("chat");
+  const inputEl  = document.getElementById("input");
+  const sendBtn  = document.getElementById("btn-send");
+  const selEl    = document.getElementById("model-select");
+  const statusEl = document.getElementById("status");
+
+  // Armazena mapa key -> instance_id (quando carregado)
+  const instanceMap = {};
 
   // ── Utilitários ──────────────────────────────────────────────────────────────
 
@@ -84,46 +93,93 @@
     appendMsg("system", "conversa reiniciada");
   }
 
-  // ── Gerenciamento de modelos ─────────────────────────────────────────────────
+  // ── Listagem de modelos ───────────────────────────────────────────────────────
 
   async function loadModels() {
     setStatus("buscando modelos...");
     try {
-      const res  = await fetch(`${API}/v1/models`);
+      const res  = await fetch(`${API}/api/v1/models`);
       const data = await res.json();
-      const models = data.data || [];
+      const models = data.models || [];
 
-      selEl.innerHTML = models.length
-        ? models.map(m => `<option value="${m.id}">${m.id}</option>`).join("")
-        : `<option value="">nenhum modelo carregado</option>`;
+      // Limpa mapa anterior
+      Object.keys(instanceMap).forEach(k => delete instanceMap[k]);
 
-      setStatus(`${models.length} modelo(s) encontrado(s)`, "#9f9");
+      const currentVal = selEl.value;
+
+      selEl.innerHTML = models.map(m => {
+        const isLoaded = m.loaded_instances && m.loaded_instances.length > 0;
+
+        // Guarda instance_id para uso no unload
+        if (isLoaded) {
+          instanceMap[m.key] = m.loaded_instances[0].id;
+        }
+
+        const dot   = isLoaded ? "●" : "○";
+        const color = isLoaded ? "#4f4" : "#666";
+        const label = `${dot} ${m.key} [${m.quantization?.name || "?"}] ${m.params_string || ""}`;
+
+        return `<option value="${m.key}" data-loaded="${isLoaded}" style="color:${color}">${label}</option>`;
+      }).join("");
+
+      // Restaura seleção anterior se ainda existir
+      const exists = [...selEl.options].find(o => o.value === currentVal);
+      if (exists) {
+        selEl.value = currentVal;
+      } else {
+        // Seleciona primeiro modelo carregado, se houver
+        const firstLoaded = [...selEl.options].find(o => o.dataset.loaded === "true");
+        if (firstLoaded) selEl.value = firstLoaded.value;
+      }
+
+      const loadedCount = models.filter(m => m.loaded_instances?.length > 0).length;
+      setStatus(`${models.length} modelo(s) — ${loadedCount} carregado(s)`, "#9f9");
+
     } catch (e) {
-      setStatus("erro ao listar modelos — verifique o IP e se o servidor está ativo", "#f99");
+      setStatus("erro ao listar modelos — verifique IP e se o servidor está ativo", "#f99");
     }
   }
 
-  async function manageModel(action) {
-    const model = selEl.value;
-    if (!model) { setStatus("selecione um modelo na lista", "#fa0"); return; }
+  // ── Carregar / descarregar ────────────────────────────────────────────────────
 
-    setStatus(`${action === "load" ? "carregando" : "descarregando"}: ${model}...`);
+  async function manageModel(action) {
+    const key = selEl.value;
+    if (!key) { setStatus("selecione um modelo na lista", "#fa0"); return; }
+
+    let body;
+    if (action === "load") {
+      // load usa { model: key }
+      body = { model: key };
+    } else {
+      // unload usa { instance_id: ... } — obrigatório
+      const iid = instanceMap[key];
+      if (!iid) {
+        setStatus("modelo não está carregado (sem instance_id)", "#fa0");
+        return;
+      }
+      body = { instance_id: iid };
+    }
+
+    const label = action === "load" ? "carregando" : "descarregando";
+    setStatus(`${label}: ${key}...`);
+
     try {
-      const res = await fetch(`${API}/api/v0/models/${action}`, {
+      const res = await fetch(`${API}/api/v1/models/${action}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model })
+        body: JSON.stringify(body)
       });
 
       if (res.ok) {
-        setStatus(`modelo ${action === "load" ? "carregado" : "descarregado"} com sucesso`, "#9f9");
-        await loadModels();
+        const done = action === "load" ? "carregado" : "descarregado";
+        setStatus(`${done}: ${key}`, "#9f9");
+        setTimeout(loadModels, 800);
       } else {
         const err = await res.text();
         setStatus(`erro ${res.status}: ${err}`, "#f99");
       }
     } catch (e) {
-      setStatus(`falha na requisição: ${e.message}`, "#f99");
+      setStatus(`falha: ${e.message}`, "#f99");
     }
   }
 
@@ -137,8 +193,14 @@
     const text = inputEl.value.trim();
     if (!text) return;
 
-    const model = selEl.value;
-    if (!model) { setStatus("selecione um modelo antes de enviar", "#fa0"); return; }
+    const key = selEl.value;
+    if (!key) { setStatus("selecione um modelo antes de enviar", "#fa0"); return; }
+
+    const selectedOpt = selEl.selectedOptions[0];
+    if (selectedOpt?.dataset.loaded === "false") {
+      setStatus("modelo não carregado — clique em ▶ Carregar primeiro", "#fa0");
+      return;
+    }
 
     inputEl.value = "";
     sendBtn.disabled = true;
@@ -154,7 +216,7 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model,
+          model: key,
           messages: history,
           stream: true,
           temperature: 0.7
