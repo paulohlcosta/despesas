@@ -122,7 +122,6 @@ if (isset($_GET['lm_action'])) {
          . "-d " . $escapedJson . " > /dev/null 2>&1 &";
     shell_exec($cmd);
     echo json_encode(['ok' => true, 'msg' => 'carregamento iniciado em background']);
-}
 
     } elseif ($action === 'unload' && isset($_POST['instance_id'])) {
         $r = lm_request('/api/v1/models/unload', 'POST', ['instance_id' => $_POST['instance_id']]);
