@@ -117,7 +117,7 @@ if (isset($_GET['lm_action'])) {
         $model = escapeshellarg($_POST['model']);
         $cmd = "curl -s -X POST http://192.168.2.10:1234/api/v1/models/load "
              . "-H 'Content-Type: application/json' "
-             . "-d '{\"model\":" . $model . "}' > /dev/null 2>&1 &";
+             . "-d '{model:\"" . $model . "\"}' > /dev/null 2>&1 &";
         shell_exec($cmd);
         echo json_encode(['ok' => true, 'msg' => 'carregamento iniciado em background']);
 
