@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>LM Studio Chat</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: monospace; background: #1a1a1a; color: #ddd; display: flex; flex-direction: column; height: 100vh; padding: 16px; gap: 12px; }
+
+    #toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    #toolbar select { flex: 1; padding: 6px; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; }
+    #toolbar button { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 13px; }
+    #btn-load   { background: #2a6a2a; color: #9f9; }
+    #btn-unload { background: #6a2a2a; color: #f99; }
+    #btn-refresh{ background: #2a2a5a; color: #99f; }
+
+    #status { font-size: 12px; color: #888; min-height: 18px; }
+
+    #chat { flex: 1; overflow-y: auto; background: #111; border: 1px solid #333; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+    .msg { max-width: 85%; padding: 8px 12px; border-radius: 6px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+    .msg.user      { align-self: flex-end; background: #1a3a5a; color: #adf; }
+    .msg.assistant { align-self: flex-start; background: #2a2a2a; color: #ddd; }
+    .msg.system    { align-self: center; color: #666; font-size: 12px; font-style: italic; }
+
+    #input-row { display: flex; gap: 8px; }
+    #input { flex: 1; padding: 10px; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; font-family: monospace; font-size: 14px; resize: none; height: 60px; }
+    #btn-send { padding: 10px 20px; background: #1a4a8a; color: #adf; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 14px; }
+    #btn-send:disabled { opacity: 0.4; cursor: default; }
+    #btn-clear { padding: 10px 12px; background: #333; color: #888; border: none; border-radius: 4px; cursor: pointer; font-family: monospace; }
+  </style>
+</head>
+<body>
+
+  <div id="toolbar">
+    <select id="model-select"><option value="">-- atualizar lista --</option></select>
+    <button id="btn-refresh" onclick="loadModels()">↺ Listar</button>
+    <button id="btn-load"    onclick="manageModel('load')">▶ Carregar</button>
+    <button id="btn-unload"  onclick="manageModel('unload')">■ Descarregar</button>
+  </div>
+
+  <div id="status">pronto</div>
+
+  <div id="chat"></div>
+
+  <div id="input-row">
+    <textarea id="input" placeholder="Digite sua mensagem... (Enter envia, Shift+Enter nova linha)"></textarea>
+    <button id="btn-send" onclick="send()">Enviar</button>
+    <button id="btn-clear" onclick="clearChat()" title="Limpar conversa">🗑</button>
+  </div>
+
+<script>
+  // LM Studio full chatbot with model management
+  // Technique: OpenAI-compatible REST API, SSE streaming, model load/unload via api/v0
+
+  const API = "http://192.168.1.100:1234"; // <<< ajuste para o IP do servidor
+
+  const history = [];
+  const chatEl  = document.getElementById("chat");
+  const inputEl = document.getElementById("input");
+  const sendBtn = document.getElementById("btn-send");
+  const selEl   = document.getElementById("model-select");
+  const statusEl= document.getElementById("status");
+
+  // ── Utilitários ──────────────────────────────────────────────────────────────
+
+  function setStatus(msg, color = "#888") {
+    statusEl.style.color = color;
+    statusEl.textContent = msg;
+  }
+
+  function appendMsg(role, text) {
+    const div = document.createElement("div");
+    div.className = "msg " + role;
+    div.textContent = text;
+    chatEl.appendChild(div);
+    chatEl.scrollTop = chatEl.scrollHeight;
+    return div;
+  }
+
+  function clearChat() {
+    history.length = 0;
+    chatEl.innerHTML = "";
+    appendMsg("system", "conversa reiniciada");
+  }
+
+  // ── Gerenciamento de modelos ─────────────────────────────────────────────────
+
+  async function loadModels() {
+    setStatus("buscando modelos...");
+    try {
+      const res  = await fetch(`${API}/v1/models`);
+      const data = await res.json();
+      const models = data.data || [];
+
+      selEl.innerHTML = models.length
+        ? models.map(m => `<option value="${m.id}">${m.id}</option>`).join("")
+        : `<option value="">nenhum modelo carregado</option>`;
+
+      setStatus(`${models.length} modelo(s) encontrado(s)`, "#9f9");
+    } catch (e) {
+      setStatus("erro ao listar modelos — verifique o IP e se o servidor está ativo", "#f99");
+    }
+  }
+
+  async function manageModel(action) {
+    const model = selEl.value;
+    if (!model) { setStatus("selecione um modelo na lista", "#fa0"); return; }
+
+    setStatus(`${action === "load" ? "carregando" : "descarregando"}: ${model}...`);
+    try {
+      const res = await fetch(`${API}/api/v0/models/${action}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model })
+      });
+
+      if (res.ok) {
+        setStatus(`modelo ${action === "load" ? "carregado" : "descarregado"} com sucesso`, "#9f9");
+        await loadModels();
+      } else {
+        const err = await res.text();
+        setStatus(`erro ${res.status}: ${err}`, "#f99");
+      }
+    } catch (e) {
+      setStatus(`falha na requisição: ${e.message}`, "#f99");
+    }
+  }
+
+  // ── Chat com streaming ────────────────────────────────────────────────────────
+
+  inputEl.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+  });
+
+  async function send() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+
+    const model = selEl.value;
+    if (!model) { setStatus("selecione um modelo antes de enviar", "#fa0"); return; }
+
+    inputEl.value = "";
+    sendBtn.disabled = true;
+    history.push({ role: "user", content: text });
+    appendMsg("user", text);
+
+    const div = appendMsg("assistant", "▌");
+    let fullResponse = "";
+    setStatus("gerando resposta...");
+
+    try {
+      const res = await fetch(`${API}/v1/chat/completions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model,
+          messages: history,
+          stream: true,
+          temperature: 0.7
+        })
+      });
+
+      if (!res.ok) {
+        div.textContent = `[erro ${res.status}]`;
+        setStatus(`erro na API: ${res.status}`, "#f99");
+        sendBtn.disabled = false;
+        return;
+      }
+
+      const reader  = res.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const lines = decoder.decode(value).split("\n").filter(l => l.startsWith("data:"));
+
+        for (const line of lines) {
+          const raw = line.slice(5).trim();
+          if (raw === "[DONE]") break;
+          try {
+            const delta = JSON.parse(raw).choices?.[0]?.delta?.content;
+            if (delta) {
+              fullResponse += delta;
+              div.textContent = fullResponse + "▌";
+              chatEl.scrollTop = chatEl.scrollHeight;
+            }
+          } catch (_) {}
+        }
+      }
+
+      div.textContent = fullResponse;
+      history.push({ role: "assistant", content: fullResponse });
+      setStatus("pronto");
+
+    } catch (e) {
+      div.textContent = `[falha: ${e.message}]`;
+      setStatus(e.message, "#f99");
+    }
+
+    sendBtn.disabled = false;
+    inputEl.focus();
+  }
+
+  // ── Init ─────────────────────────────────────────────────────────────────────
+  loadModels();
+</script>
+</body>
+</html>
