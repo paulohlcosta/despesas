@@ -85,6 +85,48 @@ if ($cron_ativo) {
     $proximo_exec = date('H:i', $agora + ($intervalo_s - ($agora % $intervalo_s)));
 }
 
+// --- Proxy LM Studio (chamadas server-side) ---
+if (isset($_GET['lm_action'])) {
+    header('Content-Type: application/json');
+
+    function lm_request(string $path, string $method = 'GET', mixed $body = null): array {
+        $url = LM_STUDIO_URL . $path;
+        $ch  = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_CUSTOMREQUEST  => $method,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        ]);
+        if ($body !== null) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
+        }
+        $resp   = curl_exec($ch);
+        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return ['status' => $status, 'body' => $resp];
+    }
+
+    $action = $_GET['lm_action'];
+
+    if ($action === 'list') {
+        $r = lm_request('/api/v1/models');
+        echo $r['body'];
+
+    } elseif ($action === 'load' && isset($_POST['model'])) {
+        $r = lm_request('/api/v1/models/load', 'POST', ['model' => $_POST['model']]);
+        echo $r['body'];
+
+    } elseif ($action === 'unload' && isset($_POST['instance_id'])) {
+        $r = lm_request('/api/v1/models/unload', 'POST', ['instance_id' => $_POST['instance_id']]);
+        echo $r['body'];
+    } else {
+        echo json_encode(['error' => 'ação inválida']);
+    }
+
+    exit;
+}
+
 $rotulos = [
     'cupom_fiscal'  => 'Cupom Fiscal',
     'danfe'         => 'DANFE',
@@ -222,6 +264,93 @@ $rotulos = [
 <div style="text-align:center;margin-top:8px;">
     <a href="capturar.php" class="btn btn-cinza">← Capturar nova despesa</a>
 </div>
+    
+<div class="card">
+    <h2>LM Studio — Modelos</h2>
+    <div id="lm-status" style="font-size:.85rem;color:#555;margin-bottom:10px;">—</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+        <select id="lm-select" style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:.9rem;">
+            <option value="">-- clique em Listar --</option>
+        </select>
+        <button class="btn btn-cinza" onclick="lmList()">↺ Listar</button>
+        <button class="btn btn-verde" onclick="lmAction('load')">▶ Carregar</button>
+        <button class="btn btn-verm" onclick="lmAction('unload')">■ Descarregar</button>
+    </div>
+</div>
 
+<script>
+const lmSel = document.getElementById('lm-select');
+const lmSt  = document.getElementById('lm-status');
+const instanceMap = {};
+
+function lmSetStatus(msg, color = '#555') {
+    lmSt.style.color = color;
+    lmSt.textContent = msg;
+}
+
+async function lmList() {
+    lmSetStatus('buscando modelos...');
+    try {
+        const res  = await fetch('monitor.php?lm_action=list');
+        const data = await res.json();
+        const models = data.models || [];
+
+        Object.keys(instanceMap).forEach(k => delete instanceMap[k]);
+
+        const prev = lmSel.value;
+        lmSel.innerHTML = models.map(m => {
+            const loaded = m.loaded_instances?.length > 0;
+            if (loaded) instanceMap[m.key] = m.loaded_instances[0].id;
+            const dot   = loaded ? '●' : '○';
+            const color = loaded ? '#1a7a1a' : '#888';
+            const label = `${dot} ${m.key} [${m.quantization?.name || '?'}] ${m.params_string || ''}`;
+            return `<option value="${m.key}" data-loaded="${loaded}" style="color:${color}">${label}</option>`;
+        }).join('');
+
+        if ([...lmSel.options].find(o => o.value === prev)) lmSel.value = prev;
+        else {
+            const first = [...lmSel.options].find(o => o.dataset.loaded === 'true');
+            if (first) lmSel.value = first.value;
+        }
+
+        const nLoaded = models.filter(m => m.loaded_instances?.length > 0).length;
+        lmSetStatus(`${models.length} modelo(s) — ${nLoaded} carregado(s)`, '#1a7a1a');
+    } catch (e) {
+        lmSetStatus('erro ao listar — verifique se o LM Studio está acessível', '#c00');
+    }
+}
+
+async function lmAction(action) {
+    const key = lmSel.value;
+    if (!key) return lmSetStatus('selecione um modelo', '#c80');
+
+    const body = new FormData();
+
+    if (action === 'load') {
+        body.append('model', key);
+    } else {
+        const iid = instanceMap[key];
+        if (!iid) return lmSetStatus('modelo não está carregado', '#c80');
+        body.append('instance_id', iid);
+    }
+
+    lmSetStatus((action === 'load' ? 'carregando' : 'descarregando') + ': ' + key);
+    try {
+        const res = await fetch(`monitor.php?lm_action=${action}`, { method: 'POST', body });
+        if (res.ok) {
+            lmSetStatus(action === 'load' ? 'carregado ✓' : 'descarregado ✓', '#1a7a1a');
+            setTimeout(lmList, 800);
+        } else {
+            const txt = await res.text();
+            lmSetStatus(`erro ${res.status}: ${txt}`, '#c00');
+        }
+    } catch (e) {
+        lmSetStatus('falha: ' + e.message, '#c00');
+    }
+}
+
+lmList();
+</script>
+    
 </body>
 </html>
