@@ -114,8 +114,12 @@ if (isset($_GET['lm_action'])) {
         echo $r['body'];
 
     } elseif ($action === 'load' && isset($_POST['model'])) {
-        $r = lm_request('/api/v1/models/load', 'POST', ['model' => $_POST['model']]);
-        echo $r['body'];
+        $model = escapeshellarg($_POST['model']);
+        $cmd = "curl -s -X POST http://192.168.2.10:1234/api/v1/models/load "
+             . "-H 'Content-Type: application/json' "
+             . "-d '{\"model\":" . $model . "}' > /dev/null 2>&1 &";
+        shell_exec($cmd);
+        echo json_encode(['ok' => true, 'msg' => 'carregamento iniciado em background']);
 
     } elseif ($action === 'unload' && isset($_POST['instance_id'])) {
         $r = lm_request('/api/v1/models/unload', 'POST', ['instance_id' => $_POST['instance_id']]);
