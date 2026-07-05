@@ -114,12 +114,15 @@ if (isset($_GET['lm_action'])) {
         echo $r['body'];
 
     } elseif ($action === 'load' && isset($_POST['model'])) {
-        $model = escapeshellarg($_POST['model']);
-        $cmd = "curl -s -X POST http://192.168.2.10:1234/api/v1/models/load "
-             . "-H 'Content-Type: application/json' "
-             . "-d '{model:\"" . $model . "\"}' > /dev/null 2>&1 &";
-        shell_exec($cmd);
-        echo json_encode(['ok' => true, 'msg' => 'carregamento iniciado em background']);
+    $model_name = $_POST['model'];
+    $jsonData = json_encode(['model' => $model_name]);
+    $escapedJson = escapeshellarg($jsonData);
+    $cmd = "curl -s -X POST http://192.168.2.10:1234/api/v1/models/load "
+         . "-H 'Content-Type: application/json' "
+         . "-d " . $escapedJson . " > /dev/null 2>&1 &";
+    shell_exec($cmd);
+    echo json_encode(['ok' => true, 'msg' => 'carregamento iniciado em background']);
+}
 
     } elseif ($action === 'unload' && isset($_POST['instance_id'])) {
         $r = lm_request('/api/v1/models/unload', 'POST', ['instance_id' => $_POST['instance_id']]);
@@ -264,10 +267,6 @@ $rotulos = [
         </table>
     <?php endif; ?>
 </div>
-
-<div style="text-align:center;margin-top:8px;">
-    <a href="capturar.php" class="btn btn-cinza">← Capturar nova despesa</a>
-</div>
     
 <div class="card">
     <h2>LM Studio — Modelos</h2>
@@ -282,6 +281,11 @@ $rotulos = [
     </div>
 </div>
 
+
+<div style="text-align:center;margin-top:8px;">
+    <a href="capturar.php" class="btn btn-cinza">← Capturar nova despesa</a>
+</div>
+    
 <script>
 const lmSel = document.getElementById('lm-select');
 const lmSt  = document.getElementById('lm-status');
@@ -343,7 +347,7 @@ async function lmAction(action) {
         const res = await fetch(`monitor.php?lm_action=${action}`, { method: 'POST', body });
         if (res.ok) {
             lmSetStatus(action === 'load' ? 'carregado ✓' : 'descarregado ✓', '#1a7a1a');
-            setTimeout(lmList, 800);
+            setTimeout(lmList, 2000);
         } else {
             const txt = await res.text();
             lmSetStatus(`erro ${res.status}: ${txt}`, '#c00');
