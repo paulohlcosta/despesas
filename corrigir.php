@@ -244,7 +244,11 @@ function vazio(?string $v): bool {
         <!-- imagem -->
         <td class="ro">
           <?php if ($r['arquivo_imagem']): ?>
-            <a href="uploads/<?= htmlspecialchars($r['arquivo_imagem']) ?>" target="_blank">ver</a>
+            <a href="uploads/<?= htmlspecialchars($r['arquivo_imagem']) ?>"
+               target="_blank"
+               data-preview>
+              <?= htmlspecialchars($r['arquivo_imagem']) ?>
+            </a>
           <?php else: ?>—<?php endif; ?>
         </td>
 
