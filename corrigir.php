@@ -192,16 +192,12 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
     <tr>
       <th>id</th>
       <th>imagem</th>
-      <th>chave_acesso</th>
       <th>data_emissao</th>
       <th>cnpj_emitente</th>
       <th>nome_estabelecimento</th>
-      <th>valor_bruto</th>
-      <th>desconto</th>
       <th>valor_liquido</th>
       <th>forma_pgto</th>
       <th>categoria</th>
-      <th>confiança</th>
       <th>revisado</th>
       <th>observacoes</th>
       <th>created_at</th>
@@ -234,10 +230,7 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
             </a>
           <?php else: ?>—<?php endif; ?>
         </td>
-
-        <!-- chave_acesso -->
-        <td><input type="text" name="chave_acesso" value="<?= htmlspecialchars($r['chave_acesso'] ?? '') ?>" style="min-width:160px"></td>
-
+          
         <!-- data_emissao -->
         <td><input type="date" name="data_emissao" value="<?= htmlspecialchars(substr($r['data_emissao'] ?? '', 0, 10)) ?>"></td>
 
@@ -248,12 +241,6 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
         <td style="<?= $sem_est ? 'background:#ffe0e0' : '' ?>">
           <input type="text" name="nome_estabelecimento" value="<?= htmlspecialchars($r['nome_estabelecimento'] ?? '') ?>" style="min-width:150px; <?= $sem_est ? 'border-color:#e07070' : '' ?>">
         </td>
-
-        <!-- valor_bruto -->
-        <td><input type="number" name="valor_bruto" step="0.01" value="<?= htmlspecialchars($r['valor_bruto'] ?? '') ?>" style="min-width:80px"></td>
-
-        <!-- desconto -->
-        <td><input type="number" name="desconto" step="0.01" value="<?= htmlspecialchars($r['desconto'] ?? '') ?>" style="min-width:70px"></td>
 
         <!-- valor_liquido -->
         <td><input type="number" name="valor_liquido" step="0.01" value="<?= htmlspecialchars($r['valor_liquido'] ?? '') ?>" style="min-width:80px"></td>
@@ -275,10 +262,7 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
             <?php endforeach; ?>
           </select>
         </td>
-
-        <!-- confianca_extracao (ro) -->
-        <td class="ro"><?= htmlspecialchars($r['confianca_extracao'] ?? '—') ?></td>
-
+          
         <!-- revisado (ro, badge) -->
         <td class="ro">
           <?php if ($r['revisado']): ?>
