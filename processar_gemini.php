@@ -11,9 +11,13 @@ Analise a imagem e retorne SOMENTE um JSON válido, sem texto adicional, sem mar
 
 Tipo de documento esperado: {$tipo_documento}
 Categorias disponíveis: {$lista_categorias}
+
+ATENÇÃO: A data de emissão (data_emissao) deve obrigatoriamente estar entre {$data_minima} e {$data_maxima}.
+Se a data extraída estiver fora desse intervalo ou não for legível, retorne null em data_emissao.
+        
 Campos do JSON: {
   "chave_acesso": "string ou null",
-  "data_emissao": "YYYY-MM-DD HH:MM:SS ou null",
+  "data_emissao": "YYYY-MM-DD HH:MM:SS — deve ser uma data entre {$data_minima} e {$data_maxima}, ou null se não encontrada"
   "cnpj_emitente": "string só dígitos ou null",
   "nome_estabelecimento": "string",
   "valor_bruto": "número ou null",
@@ -30,7 +34,10 @@ PROMPT;
     // Codifica a imagem em base64
     $imagem_b64 = base64_encode(file_get_contents($caminho_arquivo));
     $mime       = mime_content_type($caminho_arquivo);
-
+    
+    $data_maxima = date('d/m/Y');
+    $data_minima = date('d/m/Y', strtotime('-6 months'));
+    
     $payload = [
         'model'       => LLM_MODEL,
 
