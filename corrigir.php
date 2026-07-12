@@ -154,6 +154,27 @@ function vazio(?string $v): bool {
     border: none; border-radius: 4px; cursor: pointer; font-size: 11px;
   }
   .btn-save:hover { background: #25a355; }
+
+  #img-preview {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    background: rgba(0,0,0,0.82);
+    border-radius: 10px;
+    padding: 10px;
+    pointer-events: none; /* não interfere no clique do link */
+    box-shadow: 0 4px 32px #0008;
+  }
+  #img-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: rotate(90deg);
+    /* compensa o rotate: troca largura/altura visualmente */
+    transform-origin: center center;
+  }    
+    
 </style>
 </head>
 <body>
@@ -302,6 +323,79 @@ function vazio(?string $v): bool {
       </tr>
     </form>
   <?php endforeach; ?>
+
+
+
+
+
+      
+    <div id="img-preview"><img id="img-preview-img" src="" alt=""></div>
+
+    <script>
+    (function () {
+      const box   = document.getElementById('img-preview');
+      const img   = document.getElementById('img-preview-img');
+      const VW    = () => window.innerWidth;
+      const VH    = () => window.innerHeight;
+      const SIZE  = 0.80; // 80% da tela
+    
+      function posicionar(linkEl) {
+        const rect = linkEl.getBoundingClientRect();
+    
+        // Tamanho do quadro
+        const w = Math.round(VW() * SIZE);
+        const h = Math.round(VH() * SIZE);
+    
+        box.style.width  = w + 'px';
+        box.style.height = h + 'px';
+    
+        // A imagem está rotacionada 90°, então precisamos que o img
+        // caiba dentro trocando largura e altura
+        img.style.width  = (h - 20) + 'px';  // altura vira largura após rotate
+        img.style.height = (w - 20) + 'px';  // largura vira altura após rotate
+        // Centraliza o img rotacionado dentro da box
+        img.style.marginLeft = Math.round((w - h) / 2) + 'px';
+        img.style.marginTop  = Math.round((h - w) / 2) + 'px';
+    
+        // Posição do quadro: à direita do link se couber, senão à esquerda
+        let left, top;
+    
+        const espDireita = VW() - rect.right;
+        const espEsquerda = rect.left;
+    
+        if (espDireita >= w + 20) {
+          left = rect.right + 10;
+        } else if (espEsquerda >= w + 20) {
+          left = rect.left - w - 10;
+        } else {
+          // fallback centralizado
+          left = Math.round((VW() - w) / 2);
+        }
+    
+        // Vertical: centraliza no cursor, ajusta para não sair da tela
+        top = Math.round(rect.top + rect.height / 2 - h / 2);
+        top = Math.max(10, Math.min(top, VH() - h - 10));
+    
+        box.style.left = left + 'px';
+        box.style.top  = top  + 'px';
+      }
+    
+      document.querySelectorAll('a[data-preview]').forEach(function (link) {
+        link.addEventListener('mouseenter', function () {
+          img.src = '';
+          img.src = this.href;
+          box.style.display = 'block';
+          posicionar(this);
+        });
+        link.addEventListener('mouseleave', function () {
+          box.style.display = 'none';
+          img.src = '';
+        });
+      });
+    })();
+    </script>
+
+      
   </tbody>
 </table>
 </div>
