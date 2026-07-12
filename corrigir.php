@@ -359,7 +359,7 @@ function vazio(?string $v): bool {
         img.style.height = (w - 20) + 'px';  // largura vira altura após rotate
         // Centraliza o img rotacionado dentro da box
         img.style.marginLeft = Math.round((w - h) / 2) + 'px';
-        img.style.marginTop  = Math.round((h - w) / 2) + 'px';
+        img.style.marginTop  = Math.round((w - h) / 2) + 'px';
     
         // Posição do quadro: à direita do link se couber, senão à esquerda
         let left, top;
