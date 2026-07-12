@@ -191,7 +191,6 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
   <thead>
     <tr>
       <th>id</th>
-      <th>tipo_doc</th>
       <th>imagem</th>
       <th>chave_acesso</th>
       <th>data_emissao</th>
@@ -226,15 +225,6 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
       <tr class="<?= $row_class ?>">
         <!-- id (ro) -->
         <td class="ro"><?= (int)$r['id'] ?></td>
-
-        <!-- tipo_documento -->
-        <td>
-          <select name="tipo_documento">
-            <?php foreach ($tipos_doc as $t): ?>
-              <option value="<?= htmlspecialchars($t) ?>" <?= $r['tipo_documento'] === $t ? 'selected' : '' ?>><?= $t ?: '—' ?></option>
-            <?php endforeach; ?>
-          </select>
-        </td>
 
         <!-- arquivo_imagem (ro, link) -->
         <td class="ro">
