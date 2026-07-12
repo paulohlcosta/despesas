@@ -16,8 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $params = [];
     foreach ($campos_editaveis as $campo) {
         if (array_key_exists($campo, $_POST)) {
-            $sets[] = "$campo = ?";
-            $params[] = $_POST[$campo] === '' ? null : $_POST[$campo];
+            $val = $_POST[$campo];
+            // campos NOT NULL que não aceitam null/vazio
+            $not_null = ['tipo_documento'];
+            if (in_array($campo, $not_null) && $val === '') {
+                $val = 'Outro'; // valor padrão fallback
+            } else {
+                $val = ($val === '') ? null : $val;
+            }
+            $sets[]   = "$campo = ?";
+            $params[] = $val;
         }
     }
 
@@ -231,7 +239,9 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
         <!-- arquivo_imagem (ro, link) -->
         <td class="ro">
           <?php if ($r['arquivo_imagem']): ?>
-            <a href="uploads/<?= htmlspecialchars($r['arquivo_imagem']) ?>" target="_blank">ver</a>
+            <a href="uploads/<?= htmlspecialchars($r['arquivo_imagem']) ?>" target="_blank">
+              <?= htmlspecialchars($r['arquivo_imagem']) ?>
+            </a>
           <?php else: ?>—<?php endif; ?>
         </td>
 
@@ -239,7 +249,7 @@ $tipos_doc   = ['', 'NFe', 'NFCe', 'Cupom Fiscal', 'Recibo', 'Outro'];
         <td><input type="text" name="chave_acesso" value="<?= htmlspecialchars($r['chave_acesso'] ?? '') ?>" style="min-width:160px"></td>
 
         <!-- data_emissao -->
-        <td><input type="date" name="data_emissao" value="<?= htmlspecialchars($r['data_emissao'] ?? '') ?>"></td>
+        <td><input type="date" name="data_emissao" value="<?= htmlspecialchars(substr($r['data_emissao'] ?? '', 0, 10)) ?>"></td>
 
         <!-- cnpj_emitente -->
         <td><input type="text" name="cnpj_emitente" value="<?= htmlspecialchars($r['cnpj_emitente'] ?? '') ?>" style="min-width:120px"></td>
