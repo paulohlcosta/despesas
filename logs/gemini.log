@@ -1,0 +1,1154 @@
+[2026-07-02 01:29:05] ID 1: iniciando extração de 20260702_010344.jpg
+[2026-07-02 01:32:05] cURL erro: Operation timed out after 180001 milliseconds with 0 bytes received
+[2026-07-02 01:32:05] ID 1: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 01:32:05] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 01:35:05] cURL erro: Operation timed out after 180003 milliseconds with 0 bytes received
+[2026-07-02 01:35:05] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 01:35:05] Execução concluída.
+[2026-07-02 01:42:07] ID 1: iniciando extração de 20260702_010344.jpg
+[2026-07-02 01:47:21] ID 1: processado com sucesso. Arquivo renomeado para __20260702_010344.jpg
+[2026-07-02 01:47:21] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 01:52:47] ID 2: ERRO ao atualizar BD: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'cnpj_emitente' at row 1
+[2026-07-02 01:52:47] Execução concluída.
+[2026-07-02 02:15:02] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 02:20:26] ID 2: ERRO ao atualizar BD: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'cnpj_emitente' at row 1
+[2026-07-02 02:20:26] Execução concluída.
+[2026-07-02 02:30:01] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 02:33:17] JSON inválido recebido: 
+[2026-07-02 02:33:17] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 02:33:17] Execução concluída.
+[2026-07-02 02:45:02] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 02:45:02] JSON inválido recebido: 
+[2026-07-02 02:45:02] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 02:45:02] Execução concluída.
+[2026-07-02 02:46:20] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 02:49:20] cURL erro: Operation timed out after 180000 milliseconds with 0 bytes received
+[2026-07-02 02:49:20] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 02:49:20] Execução concluída.
+[2026-07-02 03:00:01] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 03:00:01] JSON inválido recebido: 
+[2026-07-02 03:00:01] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 03:00:01] Execução concluída.
+[2026-07-02 03:04:00] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 03:09:00] cURL erro: Operation timed out after 300000 milliseconds with 0 bytes received
+[2026-07-02 03:09:00] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 03:09:00] Execução concluída.
+[2026-07-02 03:15:01] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 03:20:01] cURL erro: Operation timed out after 300000 milliseconds with 0 bytes received
+[2026-07-02 03:20:01] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 03:20:01] Execução concluída.
+[2026-07-02 03:30:01] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-02 03:30:38] Outra instância em execução, abortando.
+[2026-07-02 03:35:01] cURL erro: Operation timed out after 300001 milliseconds with 0 bytes received
+[2026-07-02 03:35:01] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-02 03:35:01] Execução concluída.
+[2026-07-03 00:59:45] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 01:04:46] cURL erro: Operation timed out after 300001 milliseconds with 0 bytes received
+[2026-07-03 01:04:46] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-03 01:04:46] Execução concluída.
+[2026-07-03 01:25:36] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 01:25:36] JSON inválido recebido: 
+[2026-07-03 01:25:36] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-03 01:25:36] Execução concluída.
+[2026-07-03 01:32:07] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 01:32:16] JSON inválido recebido: 
+[2026-07-03 01:32:16] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-03 01:32:16] Execução concluída.
+[2026-07-03 01:35:00] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 01:40:00] cURL erro: Operation timed out after 300002 milliseconds with 0 bytes received
+[2026-07-03 01:40:00] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-03 01:40:00] Execução concluída.
+[2026-07-03 01:44:50] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 01:50:17] ID 2: ERRO ao atualizar BD: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '35,68' for column 'valor_bruto' at row 1
+[2026-07-03 01:50:17] Execução concluída.
+[2026-07-03 02:04:57] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 02:09:08] JSON inválido recebido: 
+[2026-07-03 02:09:08] ID 2: extração retornou vazio (stub), mantendo pendente.
+[2026-07-03 02:09:08] Execução concluída.
+[2026-07-03 02:15:01] ID 2: iniciando extração de 20260702_012249.jpg
+[2026-07-03 02:20:20] ID 2: processado com sucesso. Arquivo renomeado para __20260702_012249.jpg
+[2026-07-03 02:20:20] Execução concluída.
+[2026-07-04 03:15:02] ID 3: iniciando extração de 20260704_031038.jpg
+[2026-07-04 03:15:43] JSON inválido recebido: The image shows an electronic receipt from a company that sells products related to the sale of goods and services. The receipt is for a transaction involving the purchase of goods or services at a store located in Brazil. 
+
+The document contains several key pieces of information, including:
+
+1. **D
+[2026-07-04 03:15:43] ID 3: extração retornou vazio (stub), mantendo pendente.
+[2026-07-04 03:15:43] Execução concluída.
+[2026-07-04 03:36:47] ID 3: iniciando extração de 20260704_031038.jpg
+[2026-07-04 03:36:54] JSON inválido recebido: A receipt from a company in Brazil, showing the value of an invoice and other details about the transaction.
+[2026-07-04 03:36:54] ID 3: extração retornou vazio (stub), mantendo pendente.
+[2026-07-04 03:36:54] Execução concluída.
+[2026-07-04 03:58:31] ID 3: iniciando extração de 20260704_031038.jpg
+[2026-07-04 04:01:49] JSON inválido recebido: <|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request:** The user wants me to analyze a Brazilian fiscal document image and extract specific data points into a raw JSON object.
+2.  **Examine the Image (OCR/Visual Analysis):** I need to read the provided image, which appears to be a fiscal r
+[2026-07-04 04:01:49] ID 3: extração retornou vazio (stub), mantendo pendente.
+[2026-07-04 04:01:49] Execução concluída.
+[2026-07-04 04:14:32] ID 3: iniciando extração de 20260704_031038.jpg
+[2026-07-04 04:18:29] JSON inválido recebido: <|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request:** The user wants me to act as a data extractor for Brazilian fiscal documents (specifically a fiscal receipt/cupom fiscal).
+2.  **Identify Output Format Requirements:**
+    *   Return ONLY a valid JSON.
+    *   No additional text, no ma
+[2026-07-04 04:18:29] ID 3: extração retornou vazio (stub), mantendo pendente.
+[2026-07-04 04:18:29] Execução concluída.
+[2026-07-04 04:28:09] ID 3: iniciando extração de 20260704_031038.jpg
+[2026-07-04 04:29:39] ID 3: processado com sucesso. Arquivo renomeado para __20260704_031038.jpg
+[2026-07-04 04:29:39] Execução concluída.
+[2026-07-05 13:09:24] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:09:28] JSON inválido recebido: 
+[2026-07-05 13:09:28] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:09:28] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:09:28] JSON inválido recebido: 
+[2026-07-05 13:09:28] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:09:28] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:09:29] JSON inválido recebido: 
+[2026-07-05 13:09:29] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:09:29] Execução concluída.
+[2026-07-05 13:10:42] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:10:42] JSON inválido recebido: 
+[2026-07-05 13:10:42] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:10:42] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:10:43] JSON inválido recebido: 
+[2026-07-05 13:10:43] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:10:43] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:10:43] JSON inválido recebido: 
+[2026-07-05 13:10:43] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:10:43] Execução concluída.
+[2026-07-05 13:27:17] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:27:17] JSON inválido recebido: 
+[2026-07-05 13:27:17] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:27:17] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:27:17] JSON inválido recebido: 
+[2026-07-05 13:27:17] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:27:17] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:27:17] JSON inválido recebido: 
+[2026-07-05 13:27:17] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:27:17] Execução concluída.
+[2026-07-05 13:28:24] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:28:24] JSON inválido recebido: 
+[2026-07-05 13:28:24] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:24] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:28:24] JSON inválido recebido: 
+[2026-07-05 13:28:24] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:24] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:28:24] JSON inválido recebido: 
+[2026-07-05 13:28:24] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:24] Execução concluída.
+[2026-07-05 13:28:28] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:28:28] JSON inválido recebido: 
+[2026-07-05 13:28:28] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:28] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:28:29] JSON inválido recebido: 
+[2026-07-05 13:28:29] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:29] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:28:29] JSON inválido recebido: 
+[2026-07-05 13:28:29] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:28:29] Execução concluída.
+[2026-07-05 13:37:10] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:37:10] JSON inválido recebido: 
+[2026-07-05 13:37:10] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:37:10] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:37:10] JSON inválido recebido: 
+[2026-07-05 13:37:10] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:37:10] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:37:10] JSON inválido recebido: 
+[2026-07-05 13:37:10] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:37:10] Execução concluída.
+[2026-07-05 13:47:11] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:47:11] JSON inválido recebido: 
+[2026-07-05 13:47:11] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:47:11] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:47:11] JSON inválido recebido: 
+[2026-07-05 13:47:11] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:47:11] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:47:11] JSON inválido recebido: 
+[2026-07-05 13:47:11] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:47:11] Execução concluída.
+[2026-07-05 13:48:58] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:48:58] JSON inválido recebido: 
+[2026-07-05 13:48:58] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:48:58] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:48:58] JSON inválido recebido: 
+[2026-07-05 13:48:58] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:48:58] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:48:58] JSON inválido recebido: 
+[2026-07-05 13:48:58] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:48:58] Execução concluída.
+[2026-07-05 13:50:25] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:50:25] JSON inválido recebido: 
+[2026-07-05 13:50:25] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:50:25] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:50:25] JSON inválido recebido: 
+[2026-07-05 13:50:25] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:50:25] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:50:25] JSON inválido recebido: 
+[2026-07-05 13:50:25] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:50:25] Execução concluída.
+[2026-07-05 13:52:12] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 13:52:15] JSON inválido recebido: 
+[2026-07-05 13:52:15] ID 4: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:52:15] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 13:52:15] JSON inválido recebido: 
+[2026-07-05 13:52:15] ID 5: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:52:15] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 13:52:16] JSON inválido recebido: 
+[2026-07-05 13:52:16] ID 6: extração retornou vazio (stub), mantendo pendente.
+[2026-07-05 13:52:16] Execução concluída.
+[2026-07-05 14:03:15] ID 4: iniciando extração de 20260704_043813.jpg
+[2026-07-05 14:04:29] ID 4: processado com sucesso. Arquivo renomeado para __20260704_043813.jpg
+[2026-07-05 14:04:29] ID 5: iniciando extração de 20260704_043831.jpg
+[2026-07-05 14:05:44] ID 5: processado com sucesso. Arquivo renomeado para __20260704_043831.jpg
+[2026-07-05 14:05:44] ID 6: iniciando extração de 20260704_235315.jpg
+[2026-07-05 14:06:59] ID 6: processado com sucesso. Arquivo renomeado para __20260704_235315.jpg
+[2026-07-05 14:06:59] Execução concluída.
+[2026-07-05 16:20:52] ID 7: iniciando extração de 20260705_162039.jpg
+[2026-07-05 16:22:00] ID 7: processado com sucesso. Arquivo renomeado para __20260705_162039.jpg
+[2026-07-05 16:22:00] Execução concluída.
+[2026-07-12 20:45:02] ID 8: iniciando extração de 20260712_201609.jpg
+[2026-07-12 20:46:22] ID 8: processado com sucesso. Arquivo renomeado para __20260712_201609.jpg
+[2026-07-12 20:46:22] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 20:47:32] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:47:32] ID 10: iniciando extração de 20260712_202050.jpg
+[2026-07-12 20:48:45] ID 10: processado com sucesso. Arquivo renomeado para __20260712_202050.jpg
+[2026-07-12 20:48:45] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 20:50:02] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:50:02] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 20:51:11] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:51:11] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 20:52:21] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:52:21] ID 14: iniciando extração de 20260712_202330.jpg
+[2026-07-12 20:53:34] ID 14: processado com sucesso. Arquivo renomeado para __20260712_202330.jpg
+[2026-07-12 20:53:34] ID 15: iniciando extração de 20260712_202354.jpg
+[2026-07-12 20:54:47] ID 15: processado com sucesso. Arquivo renomeado para __20260712_202354.jpg
+[2026-07-12 20:54:47] ID 16: iniciando extração de 20260712_202423.jpg
+[2026-07-12 20:56:00] ID 16: processado com sucesso. Arquivo renomeado para __20260712_202423.jpg
+[2026-07-12 20:56:00] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 20:57:09] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:57:09] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 20:58:25] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:58:25] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 20:59:35] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 20:59:35] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 21:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 21:02:01] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:02:01] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 21:02:22] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:02:22] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 21:04:17] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:04:17] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 21:04:18] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:04:18] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 21:06:31] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:06:31] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 21:06:31] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:06:31] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 21:08:44] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:08:44] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 21:09:55] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:09:55] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 21:11:03] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:11:03] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 21:12:16] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:12:16] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 21:13:35] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:13:35] Execução concluída.
+[2026-07-12 21:13:35] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:13:35] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 21:14:45] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:14:45] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 21:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 21:16:59] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:16:59] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 21:17:57] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:17:57] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 21:19:17] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:19:17] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 21:19:25] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:19:25] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 21:21:31] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:21:31] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 21:22:28] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:22:28] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 21:23:51] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:23:51] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 21:25:00] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:25:00] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 21:26:09] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:26:09] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 21:27:19] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:27:19] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 21:28:27] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:28:27] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 21:29:36] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:29:36] Execução concluída.
+[2026-07-12 21:29:42] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:29:42] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 21:30:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 21:31:58] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:31:58] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 21:32:55] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:32:55] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 21:34:16] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:34:16] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 21:34:23] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:34:23] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 21:36:29] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:36:29] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 21:36:29] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:36:29] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 21:38:47] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:38:47] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 21:39:57] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:39:57] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 21:41:05] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:41:05] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 21:42:15] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:42:15] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 21:43:32] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:43:32] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 21:43:38] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:43:38] Execução concluída.
+[2026-07-12 21:43:53] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:43:53] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 21:45:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 21:46:15] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:46:15] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 21:46:23] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:46:23] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 21:47:35] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:47:35] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 21:48:54] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:48:54] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 21:48:54] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:48:54] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 21:50:18] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:50:18] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 21:50:19] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:50:19] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 21:52:32] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:52:32] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 21:52:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:52:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 21:54:46] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:54:46] Execução concluída.
+[2026-07-12 21:54:47] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:54:47] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 21:55:56] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:55:56] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 21:57:06] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:57:06] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 21:58:15] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:58:15] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 21:59:32] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 21:59:32] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 22:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 22:01:46] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:01:46] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 22:02:46] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:02:46] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 22:04:04] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:04:04] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 22:05:04] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:05:04] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 22:06:23] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:06:23] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 22:07:22] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:07:22] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 22:08:41] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:08:41] Execução concluída.
+[2026-07-12 22:08:42] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:08:42] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 22:09:52] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:09:52] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 22:11:06] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:11:06] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 22:11:26] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:11:26] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 22:11:46] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:11:46] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 22:11:58] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:11:58] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 22:13:07] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:13:07] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 22:14:16] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:14:16] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 22:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 22:16:31] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:16:31] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 22:17:30] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:17:30] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 22:18:54] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:18:54] Execução concluída.
+[2026-07-12 22:18:54] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:18:54] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 22:20:04] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:20:04] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 22:21:14] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:21:14] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 22:22:24] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:22:24] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 22:23:33] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:23:33] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 22:24:43] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:24:43] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 22:25:52] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:25:52] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 22:27:01] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:27:01] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 22:28:18] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:28:18] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 22:29:28] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:29:28] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 22:30:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 22:31:43] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:31:43] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 22:32:45] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:32:45] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 22:33:09] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:33:09] Execução concluída.
+[2026-07-12 22:33:12] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:33:12] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 22:34:21] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:34:21] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 22:35:32] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:35:32] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 22:36:42] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:36:42] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 22:37:51] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:37:51] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 22:39:06] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:39:06] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 22:39:18] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:39:18] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 22:40:29] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:40:29] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 22:41:46] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:41:46] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 22:43:02] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:43:02] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 22:44:13] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:44:13] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 22:45:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 22:45:33] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:45:33] Execução concluída.
+[2026-07-12 22:45:33] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:45:33] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 22:46:50] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:46:50] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 22:47:02] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:47:02] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 22:48:13] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:48:13] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 22:49:22] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:49:22] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 22:50:31] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:50:31] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 22:51:41] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:51:41] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 22:52:58] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:52:58] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 22:54:07] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:54:07] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 22:55:16] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:55:16] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 22:56:25] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:56:25] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 22:57:43] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:57:43] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 22:58:52] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 22:58:52] Execução concluída.
+[2026-07-12 23:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 23:01:11] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:01:11] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 23:02:20] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:02:20] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 23:03:29] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:03:29] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 23:04:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:04:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 23:05:50] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:05:50] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 23:06:59] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:06:59] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 23:08:09] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:08:09] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 23:09:18] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:09:18] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 23:10:28] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:10:28] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 23:11:44] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:11:44] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 23:11:57] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:11:57] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 23:13:13] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:13:13] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 23:14:23] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:14:23] Execução concluída.
+[2026-07-12 23:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 23:16:11] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:16:11] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 23:17:21] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:17:21] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 23:18:32] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:18:32] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 23:19:42] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:19:42] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 23:20:51] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:20:51] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 23:22:05] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:22:05] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 23:22:22] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:22:22] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 23:22:41] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:22:41] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 23:23:51] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:23:51] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 23:25:08] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:25:08] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 23:26:17] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:26:17] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 23:27:34] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:27:34] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 23:28:44] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:28:44] Execução concluída.
+[2026-07-12 23:30:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 23:31:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:31:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 23:32:27] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:32:27] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 23:33:36] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:33:36] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 23:34:46] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:34:46] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 23:35:55] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:35:55] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 23:37:12] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:37:12] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 23:37:32] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:37:32] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 23:37:44] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:37:44] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 23:38:53] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:38:53] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 23:40:03] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:40:03] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 23:41:12] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:41:12] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 23:42:21] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:42:21] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 23:43:30] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:43:30] Execução concluída.
+[2026-07-12 23:45:02] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-12 23:46:11] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:46:11] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-12 23:47:22] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:47:22] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-12 23:48:32] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:48:32] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-12 23:49:41] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:49:41] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-12 23:50:51] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:50:51] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-12 23:52:08] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:52:08] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-12 23:52:20] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:52:20] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-12 23:53:29] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:53:29] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-12 23:54:38] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:54:38] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-12 23:55:48] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:55:48] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-12 23:56:57] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:56:57] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-12 23:58:07] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:58:07] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-12 23:59:16] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-12 23:59:16] Execução concluída.
+[2026-07-13 00:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 00:01:11] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:01:11] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 00:02:20] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:02:20] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 00:03:30] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:03:30] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 00:04:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:04:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 00:05:49] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:05:49] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 00:06:59] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:06:59] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 00:08:13] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:08:13] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 00:09:30] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:09:30] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 00:10:39] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:10:39] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 00:11:49] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:11:49] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 00:13:06] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:13:06] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 00:13:26] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:13:26] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 00:14:35] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:14:35] Execução concluída.
+[2026-07-13 00:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 00:16:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:16:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 00:17:27] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:17:27] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 00:18:36] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:18:36] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 00:19:46] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:19:46] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 00:20:55] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:20:55] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 00:22:10] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:22:10] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 00:22:29] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:22:29] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 00:22:42] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:22:42] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 00:23:51] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:23:51] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 00:25:08] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:25:08] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 00:25:20] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:25:20] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 00:26:29] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:26:29] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 00:27:39] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:27:39] Execução concluída.
+[2026-07-13 00:30:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 00:31:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:31:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 00:32:19] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:32:19] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 00:33:29] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:33:29] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 00:34:39] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:34:39] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 00:35:53] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:35:53] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 00:36:06] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:36:06] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 00:37:20] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:37:20] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 00:38:29] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:38:29] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 00:39:39] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:39:39] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 00:40:55] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:40:55] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 00:42:04] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:42:04] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 00:43:13] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:43:13] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 00:44:23] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:44:23] Execução concluída.
+[2026-07-13 00:45:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 00:46:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:46:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 00:47:20] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:47:20] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 00:48:29] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:48:29] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 00:49:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:49:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 00:50:49] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:50:49] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 00:51:58] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:51:58] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 00:53:08] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:53:08] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 00:54:25] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:54:25] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 00:55:34] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:55:34] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 00:56:43] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:56:43] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 00:57:52] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:57:52] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 00:59:01] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 00:59:01] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 01:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 01:00:21] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:00:21] Execução concluída.
+[2026-07-13 01:00:24] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:00:24] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 01:01:41] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:01:41] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 01:02:51] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:02:51] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 01:04:01] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:04:01] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 01:05:16] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:05:16] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 01:05:28] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:05:28] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 01:06:38] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:06:38] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 01:07:47] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:07:47] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 01:08:57] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:08:57] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 01:10:06] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:10:06] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 01:11:15] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:11:15] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 01:12:24] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:12:24] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 01:13:34] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:13:34] Execução concluída.
+[2026-07-13 01:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 01:16:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:16:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 01:17:19] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:17:19] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 01:18:29] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:18:29] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 01:19:39] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:19:39] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 01:20:49] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:20:49] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 01:22:03] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:22:03] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 01:22:20] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:22:20] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 01:22:33] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:22:33] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 01:23:42] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:23:42] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 01:24:51] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:24:51] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 01:26:01] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:26:01] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 01:27:11] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:27:11] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 01:28:20] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:28:20] Execução concluída.
+[2026-07-13 01:30:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 01:31:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:31:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 01:32:20] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:32:20] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 01:33:30] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:33:30] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 01:34:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:34:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 01:35:49] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:35:49] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 01:36:58] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:36:58] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 01:38:13] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:38:13] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 01:39:22] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:39:22] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 01:40:32] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:40:32] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 01:41:48] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:41:48] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 01:42:58] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:42:58] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 01:44:15] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:44:15] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 01:45:02] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 01:45:34] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:45:34] Execução concluída.
+[2026-07-13 01:45:35] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:45:35] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 01:46:44] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:46:44] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 01:47:53] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:47:53] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 01:49:04] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:49:04] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 01:50:18] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:50:18] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 01:50:38] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:50:38] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 01:50:50] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:50:50] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 01:52:07] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:52:07] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 01:53:16] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:53:16] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 01:54:33] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:54:33] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 01:55:42] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:55:42] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 01:56:59] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:56:59] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 01:58:08] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 01:58:08] Execução concluída.
+[2026-07-13 02:00:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 02:01:10] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:01:10] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 02:02:21] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:02:21] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 02:03:30] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:03:30] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 02:04:40] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:04:40] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 02:05:51] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:05:51] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 02:07:00] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:07:00] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 02:08:17] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:08:17] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 02:08:37] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:08:37] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 02:09:46] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:09:46] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 02:10:55] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:10:55] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 02:12:05] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:12:05] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 02:13:22] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:13:22] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 02:14:31] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:14:31] Execução concluída.
+[2026-07-13 02:15:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 02:16:11] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:16:11] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 02:17:22] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:17:22] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 02:18:31] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:18:31] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 02:19:41] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:19:41] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 02:20:51] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:20:51] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 02:22:00] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:22:00] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 02:23:09] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:23:09] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 02:24:26] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:24:26] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 02:25:36] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:25:36] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 02:26:45] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:26:45] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 02:27:54] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:27:54] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 02:29:04] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:29:04] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 02:30:02] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 02:30:23] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:30:23] Execução concluída.
+[2026-07-13 02:30:24] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:30:24] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 02:31:41] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:31:41] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 02:32:51] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:32:51] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 02:34:01] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:34:01] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 02:35:10] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:35:10] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 02:36:24] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:36:24] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 02:36:43] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:36:43] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 02:36:55] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:36:55] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 02:38:12] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:38:12] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 02:38:24] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:38:24] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 02:39:33] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:39:33] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 02:40:43] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:40:43] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 02:41:53] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:41:53] Execução concluída.
+[2026-07-13 02:45:01] ID 9: iniciando extração de 20260712_201951.jpg
+[2026-07-13 02:46:09] ID 9: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:46:09] ID 11: iniciando extração de 20260712_202118.jpg
+[2026-07-13 02:47:26] ID 11: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:47:26] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-13 02:48:37] ID 12: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:48:37] ID 13: iniciando extração de 20260712_202259.jpg
+[2026-07-13 02:49:46] ID 13: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:49:46] ID 17: iniciando extração de 20260712_202453.jpg
+[2026-07-13 02:50:56] ID 17: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:50:56] ID 18: iniciando extração de 20260712_202526.jpg
+[2026-07-13 02:52:10] ID 18: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:52:10] ID 19: iniciando extração de 20260712_202635.jpg
+[2026-07-13 02:52:22] ID 19: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:52:22] ID 20: iniciando extração de 20260712_202711.jpg
+[2026-07-13 02:53:31] ID 20: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:53:31] ID 21: iniciando extração de 20260712_202730.jpg
+[2026-07-13 02:54:40] ID 21: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:54:40] ID 22: iniciando extração de 20260712_202821.jpg
+[2026-07-13 02:55:49] ID 22: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:55:49] ID 23: iniciando extração de 20260712_202851.jpg
+[2026-07-13 02:56:58] ID 23: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:56:58] ID 24: iniciando extração de 20260712_202915.jpg
+[2026-07-13 02:58:15] ID 24: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:58:15] ID 25: iniciando extração de 20260712_202938.jpg
+[2026-07-13 02:59:28] ID 25: ERRO ao atualizar BD: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'null' for column 'data_emissao' at row 1
+[2026-07-13 02:59:28] Execução concluída.
+[2026-07-14 20:22:05] ID 12: iniciando extração de 20260712_202219.jpg
+[2026-07-14 20:23:22] Outra instância em execução, abortando.
+[2026-07-19 02:48:36] ID 26: iniciando extração de 20260716_012426.jpg
+[2026-07-19 02:50:02] ID 26: processado com sucesso. Arquivo renomeado para __20260716_012426.jpg
+[2026-07-19 02:50:02] ID 27: iniciando extração de 20260716_012501.jpg
+[2026-07-19 02:51:20] ID 27: processado com sucesso. Arquivo renomeado para __20260716_012501.jpg
+[2026-07-19 02:51:20] ID 28: iniciando extração de 20260716_012820.jpg
+[2026-07-19 02:52:37] ID 28: processado com sucesso. Arquivo renomeado para __20260716_012820.jpg
+[2026-07-19 02:52:37] ID 29: iniciando extração de 20260716_012835.jpg
+[2026-07-19 02:53:55] ID 29: processado com sucesso. Arquivo renomeado para __20260716_012835.jpg
+[2026-07-19 02:53:55] ID 30: iniciando extração de 20260716_012859.jpg
+[2026-07-19 02:55:10] ID 30: processado com sucesso. Arquivo renomeado para __20260716_012859.jpg
+[2026-07-19 02:55:10] ID 31: iniciando extração de 20260716_012933.jpg
+[2026-07-19 02:56:27] ID 31: processado com sucesso. Arquivo renomeado para __20260716_012933.jpg
+[2026-07-19 02:56:27] ID 32: iniciando extração de 20260716_012950.jpg
+[2026-07-19 02:57:45] ID 32: processado com sucesso. Arquivo renomeado para __20260716_012950.jpg
+[2026-07-19 02:57:45] ID 33: iniciando extração de 20260716_013014.jpg
+[2026-07-19 02:59:00] ID 33: processado com sucesso. Arquivo renomeado para __20260716_013014.jpg
+[2026-07-19 02:59:00] ID 34: iniciando extração de 20260716_013028.jpg
+[2026-07-19 03:00:19] ID 34: processado com sucesso. Arquivo renomeado para __20260716_013028.jpg
+[2026-07-19 03:00:19] ID 35: iniciando extração de 20260716_013051.jpg
+[2026-07-19 03:01:37] ID 35: processado com sucesso. Arquivo renomeado para __20260716_013051.jpg
+[2026-07-19 03:01:37] ID 36: iniciando extração de 20260716_013216.jpg
+[2026-07-19 03:02:51] ID 36: processado com sucesso. Arquivo renomeado para __20260716_013216.jpg
+[2026-07-19 03:02:51] ID 37: iniciando extração de 20260716_013238.jpg
+[2026-07-19 03:04:19] ID 37: processado com sucesso. Arquivo renomeado para __20260716_013238.jpg
+[2026-07-19 03:04:19] ID 38: iniciando extração de 20260716_013306.jpg
+[2026-07-19 03:05:37] ID 38: processado com sucesso. Arquivo renomeado para __20260716_013306.jpg
+[2026-07-19 03:05:37] ID 39: iniciando extração de 20260716_013400.jpg
+[2026-07-19 03:06:52] ID 39: processado com sucesso. Arquivo renomeado para __20260716_013400.jpg
+[2026-07-19 03:06:52] ID 40: iniciando extração de 20260716_013431.jpg
+[2026-07-19 03:08:07] ID 40: processado com sucesso. Arquivo renomeado para __20260716_013431.jpg
+[2026-07-19 03:08:07] ID 41: iniciando extração de 20260716_013447.jpg
+[2026-07-19 03:09:21] ID 41: processado com sucesso. Arquivo renomeado para __20260716_013447.jpg
+[2026-07-19 03:09:21] ID 42: iniciando extração de 20260716_013458.jpg
+[2026-07-19 03:10:39] ID 42: processado com sucesso. Arquivo renomeado para __20260716_013458.jpg
+[2026-07-19 03:10:39] ID 43: iniciando extração de 20260716_013537.jpg
+[2026-07-19 03:11:58] ID 43: processado com sucesso. Arquivo renomeado para __20260716_013537.jpg
+[2026-07-19 03:11:58] ID 44: iniciando extração de 20260716_013610.jpg
+[2026-07-19 03:13:16] ID 44: processado com sucesso. Arquivo renomeado para __20260716_013610.jpg
+[2026-07-19 03:13:16] ID 45: iniciando extração de 20260716_013632.jpg
+[2026-07-19 03:14:31] ID 45: processado com sucesso. Arquivo renomeado para __20260716_013632.jpg
+[2026-07-19 03:14:31] ID 46: iniciando extração de 20260716_013643.jpg
+[2026-07-19 03:15:50] ID 46: processado com sucesso. Arquivo renomeado para __20260716_013643.jpg
+[2026-07-19 03:15:50] ID 47: iniciando extração de 20260716_013944.jpg
+[2026-07-19 03:17:09] ID 47: processado com sucesso. Arquivo renomeado para __20260716_013944.jpg
+[2026-07-19 03:17:09] ID 48: iniciando extração de 20260716_014008.jpg
+[2026-07-19 03:18:27] ID 48: processado com sucesso. Arquivo renomeado para __20260716_014008.jpg
+[2026-07-19 03:18:27] ID 49: iniciando extração de 20260716_014115.jpg
+[2026-07-19 03:19:45] ID : JSON de fallback detectado, tratando como processado.
+[2026-07-19 03:19:45] ID 49: processado com sucesso. Arquivo renomeado para __20260716_014115.jpg
+[2026-07-19 03:19:45] ID 50: iniciando extração de 20260716_014144.jpg
+[2026-07-19 03:21:07] ID : JSON de fallback detectado, tratando como processado.
+[2026-07-19 03:21:07] ID 50: processado com sucesso. Arquivo renomeado para __20260716_014144.jpg
+[2026-07-19 03:21:07] ID 51: iniciando extração de 20260716_014200.jpg
+[2026-07-19 03:22:25] ID 51: processado com sucesso. Arquivo renomeado para __20260716_014200.jpg
+[2026-07-19 03:22:25] ID 52: iniciando extração de 20260716_014210.jpg
+[2026-07-19 03:23:39] ID : JSON de fallback detectado, tratando como processado.
+[2026-07-19 03:23:39] ID 52: processado com sucesso. Arquivo renomeado para __20260716_014210.jpg
+[2026-07-19 03:23:39] ID 53: iniciando extração de 20260716_014227.jpg
+[2026-07-19 03:24:57] ID 53: processado com sucesso. Arquivo renomeado para __20260716_014227.jpg
+[2026-07-19 03:24:57] ID 54: iniciando extração de 20260716_014255.jpg
+[2026-07-19 03:26:16] ID 54: processado com sucesso. Arquivo renomeado para __20260716_014255.jpg
+[2026-07-19 03:26:16] ID 55: iniciando extração de 20260716_014325.jpg
+[2026-07-19 03:27:34] ID 55: processado com sucesso. Arquivo renomeado para __20260716_014325.jpg
+[2026-07-19 03:27:34] ID 56: iniciando extração de 20260716_014423.jpg
+[2026-07-19 03:28:56] ID : JSON de fallback detectado, tratando como processado.
+[2026-07-19 03:28:57] ID 56: processado com sucesso. Arquivo renomeado para __20260716_014423.jpg
+[2026-07-19 03:28:57] ID 57: iniciando extração de 20260716_014452.jpg
+[2026-07-19 03:30:12] ID 57: processado com sucesso. Arquivo renomeado para __20260716_014452.jpg
+[2026-07-19 03:30:12] ID 58: iniciando extração de 20260716_014512.jpg
+[2026-07-19 03:31:25] ID : JSON de fallback detectado, tratando como processado.
+[2026-07-19 03:31:25] ID 58: processado com sucesso. Arquivo renomeado para __20260716_014512.jpg
+[2026-07-19 03:31:25] ID 59: iniciando extração de 20260716_014530.jpg
+[2026-07-19 03:32:40] ID 59: processado com sucesso. Arquivo renomeado para __20260716_014530.jpg
+[2026-07-19 03:32:40] ID 60: iniciando extração de 20260716_014613.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 60: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 61: iniciando extração de 20260716_014633.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 61: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 62: iniciando extração de 20260716_014734.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 62: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 63: iniciando extração de 20260716_014810.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 63: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 64: iniciando extração de 20260716_014827.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 64: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 65: iniciando extração de 20260716_014916.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 65: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 66: iniciando extração de 20260716_015039.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 66: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 67: iniciando extração de 20260716_015234.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 67: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 68: iniciando extração de 20260716_015327.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 68: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 69: iniciando extração de 20260716_015355.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 69: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 70: iniciando extração de 20260716_015427.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 70: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 71: iniciando extração de 20260716_015447.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 71: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 72: iniciando extração de 20260716_015514.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 72: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 73: iniciando extração de 20260716_015542.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 73: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 74: iniciando extração de 20260716_015603.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 74: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 75: iniciando extração de 20260716_015635.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 75: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 76: iniciando extração de 20260716_015652.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 76: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 77: iniciando extração de 20260716_015709.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 77: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 78: iniciando extração de 20260716_015729.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 78: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 79: iniciando extração de 20260716_015748.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 79: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 80: iniciando extração de 20260716_020007.jpg
+[2026-07-19 03:33:07] JSON inválido recebido: 
+[2026-07-19 03:33:07] ID 80: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:07] ID 81: iniciando extração de 20260716_020047.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 81: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 82: iniciando extração de 20260716_020136.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 82: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 83: iniciando extração de 20260716_020207.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 83: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 84: iniciando extração de 20260716_020227.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 84: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 85: iniciando extração de 20260716_020304.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 85: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 86: iniciando extração de 20260716_020342.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 86: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 87: iniciando extração de 20260716_020356.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 87: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 88: iniciando extração de 20260716_020428.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 88: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 89: iniciando extração de 20260716_020455.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 89: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 90: iniciando extração de 20260716_020524.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 90: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 91: iniciando extração de 20260716_020538.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 91: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 92: iniciando extração de 20260716_020601.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 92: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 93: iniciando extração de 20260716_020624.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 93: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 94: iniciando extração de 20260716_020636.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 94: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 95: iniciando extração de 20260716_020700.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 95: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 96: iniciando extração de 20260716_020731.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 96: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 97: iniciando extração de 20260716_020806.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 97: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 98: iniciando extração de 20260716_020851.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 98: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 99: iniciando extração de 20260716_020907.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 99: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 100: iniciando extração de 20260716_021002.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 100: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 101: iniciando extração de 20260716_021013.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 101: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 102: iniciando extração de 20260716_021041.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 102: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 103: iniciando extração de 20260716_021130.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 103: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 104: iniciando extração de 20260716_021143.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 104: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 105: iniciando extração de 20260716_021907.jpg
+[2026-07-19 03:33:08] JSON inválido recebido: 
+[2026-07-19 03:33:08] ID 105: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:08] ID 106: iniciando extração de 20260716_021941.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 106: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 107: iniciando extração de 20260716_022004.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 107: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 108: iniciando extração de 20260716_022038.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 108: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 109: iniciando extração de 20260716_022102.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 109: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 110: iniciando extração de 20260716_022120.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 110: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 111: iniciando extração de 20260716_022158.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 111: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 112: iniciando extração de 20260716_022211.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 112: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 113: iniciando extração de 20260716_022228.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 113: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 114: iniciando extração de 20260716_022247.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 114: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 115: iniciando extração de 20260716_022306.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 115: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 116: iniciando extração de 20260716_022328.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 116: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 117: iniciando extração de 20260716_022344.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 117: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 118: iniciando extração de 20260716_022400.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 118: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] ID 119: iniciando extração de 20260716_022416.jpg
+[2026-07-19 03:33:09] JSON inválido recebido: 
+[2026-07-19 03:33:09] ID 119: extração retornou vazio (stub), mantendo pendente.
+[2026-07-19 03:33:09] Execução concluída.

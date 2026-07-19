@@ -1,5 +1,5 @@
 Mercado/comida
-Combustível
+Combustivel
 Mensalidades
 Passeios
 Diversos
@@ -7,4 +7,4 @@ Compras
 Casa
 Carros
 Viagens/Eventos
-Médicos
+Medicos

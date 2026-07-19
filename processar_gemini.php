@@ -96,7 +96,11 @@ PROMPT;
 
     $dados = json_decode(trim($conteudo), true);
 
-    if (json_last_error() !== JSON_ERROR_NONE) {
+    // Patch: Se o modelo retornar o JSON padrão de erro, tratar como sucesso (revisado = 1)
+    if (!empty($dados) && ($dados['confianca_extracao'] ?? 0) == 100 && ($dados['valor_liquido'] ?? 0.0) == 0.0) {
+        log_msg("ID $id: JSON de fallback detectado, tratando como processado.");
+        // Deixa passar, os campos serão preenchidos com os valores default abaixo
+    } elseif (json_last_error() !== JSON_ERROR_NONE) {
         log_msg("JSON inválido recebido: " . substr($conteudo, 0, 300));
         return [];
     }
@@ -178,7 +182,10 @@ foreach ($pendentes as $registro) {
     }
 
     $chave_acesso         = $dados['chave_acesso']         ?? null;
-    $data_emissao         = $dados['data_emissao']         ?? date('Y-m-d H:i:s');
+    $data_emissao = $dados['data_emissao'];
+    if (empty($data_emissao) || $data_emissao === 'null') {
+        $data_emissao = '1999-01-01 00:00:00';
+    }
     $cnpj_emitente        = $dados['cnpj_emitente']        ?? null;
     $nome_estabelecimento = $dados['nome_estabelecimento'] ?? '(não identificado)';
     $valor_bruto          = $dados['valor_bruto']          ?? 0.00;

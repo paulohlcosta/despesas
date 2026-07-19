@@ -52,19 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
             $ext = pathinfo($old_name, PATHINFO_EXTENSION);
             $name_only = pathinfo($old_name, PATHINFO_FILENAME);
 
-            $has_prefix_underscore = (strpos($name_only, "__") === 0);
+            // Logica: se marcado, deve ter __. Se desmarcado, não deve ter __.
+            $has_double_underscore = (strpos($name_only, '__') !== false);
             
-            if ($revisado_checkbox && !$has_prefix_underscore) {
-                // Adicionar __ como prefixo
-                $new_name = "__" . $name_only . "." . $ext;
+            if ($revisado_checkbox && !$has_double_underscore) {
+                // Adicionar __
+                $new_name = $name_only . '__.' . $ext;
                 if (file_exists($dir . $old_name) && rename($dir . $old_name, $dir . $new_name)) {
                     $sets[] = "arquivo_imagem = ?";
                     $params[] = $new_name;
                 }
-            } elseif (!$revisado_checkbox && $has_prefix_underscore) {
-                // Remover __ como prefixo
-                $clean_name = substr($name_only, 2);
-                $new_name = $clean_name . "." . $ext;
+            } elseif (!$revisado_checkbox && $has_double_underscore) {
+                // Remover __
+                $clean_name = str_replace('__', '', $name_only);
+                $new_name = $clean_name . '.' . $ext;
                 if (file_exists($dir . $old_name) && rename($dir . $old_name, $dir . $new_name)) {
                     $sets[] = "arquivo_imagem = ?";
                     $params[] = $new_name;

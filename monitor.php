@@ -226,6 +226,7 @@ $rotulos = [
             </form>
         <?php endif; ?>
         <a href="monitor.php" class="btn btn-cinza">↻ Atualizar</a>
+        <a href="logs/gemini.log" class="btn btn-cinza">📋 Logs</a>
     </div>
 </div>
 
@@ -249,12 +250,14 @@ $rotulos = [
             <?php foreach ($pendentes as $r): ?>
                 <tr>
                     <td>
-                        <img
-                            class="thumb"
-                            src="uploads/<?= urlencode($r['arquivo_imagem']) ?>"
-                            alt="thumb"
-                            onerror="this.style.display='none'"
-                        >
+                        <a href="uploads/<?= urlencode($r['arquivo_imagem']) ?>" target="_blank">
+                            <img
+                                class="thumb"
+                                src="uploads/<?= urlencode($r['arquivo_imagem']) ?>"
+                                alt="thumb"
+                                onerror="this.style.display='none'"
+                            >
+                        </a>
                     </td>
                     <td>#<?= $r['id'] ?></td>
                     <td><span class="badge badge-pend"><?= htmlspecialchars($rotulos[$r['tipo_documento']] ?? $r['tipo_documento']) ?></span></td>
